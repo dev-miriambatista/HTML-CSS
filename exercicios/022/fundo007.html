@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Alinhamento de imagens</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #container{
+            background-image: url("imagens/target001.png");
+            background-size: 100% 100%;
+            background-color: #00ffff;
+            position: relative;
+            height: 480px;
+            width: 480px;
+            border: 1px solid #00ffff;
+            margin:10px;
+        }
+        #conteudo{
+            background-image: url("imagens/target001.png");
+            background-size: 100% 100%;
+            background-color: blueviolet;
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            margin:10px;
+            border: 1px solid blueviolet;
+            left:50%;
+            top:50%;
+            transform: translate(-55%,-55%);
+        }
+
+    </style>
+</head>
+<body>
+    <section id="container">
+        <article id="conteudo">
+
+        </article>
+    </section>
+    
+</body>
+</html>
