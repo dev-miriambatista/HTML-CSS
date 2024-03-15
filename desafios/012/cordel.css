@@ -26,6 +26,8 @@ header {
     color: white;
     text-align: center;
     padding-bottom: 0px;
+    font-size: 10vh;
+    
 
 }
 
@@ -34,7 +36,7 @@ h1 {
     padding-bottom: 0px;
     font-variant: small-caps;
     font-family:var(--fonte2);
-    font-size: 15vh;
+    font-size: 10vh;
 }
 
 a {
