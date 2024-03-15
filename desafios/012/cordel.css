@@ -56,9 +56,13 @@ section {
     padding-top: 10vh;
     padding-bottom: 10vh;
     line-height: 2em;
-    padding-left: 30px;
     font-size:5vh;
     font-family:var(--fonte3);
+}
+
+section>p{
+    padding-bottom: 2em;
+    padding-left: 40px;
 }
 
 section.normal {
@@ -67,12 +71,26 @@ section.normal {
 }
 
 section.imagem {
-    background-color: #241a1a;
+    background-color: #241a1a69;
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px black;
+    background-attachment: fixed;
 }
 
 section.imagem >p{
-    background-color: #00000062;
+    background-color: #00000050;
     display: inline-block;
+    text-shadow: 1px 1px 2px ;
+}
+
+section#img01{
+    background-image: url("imagens/background001.jpg");
+    background-size: cover;
+}
+
+section#img02{
+    background-image: url("imagens/background002.jpg");
+    background-size: cover;
 }
 
 footer {
