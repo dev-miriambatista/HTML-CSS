@@ -10,8 +10,9 @@
 }
 
 * {
-    margin: 0px;
+    margin: auto;
     padding: 0px;
+    
 }
 
 body {
@@ -32,6 +33,7 @@ header {
 }
 
 h1 {
+    margin:auto;
     padding-top: 70px;
     padding-bottom: 0px;
     font-variant: small-caps;
