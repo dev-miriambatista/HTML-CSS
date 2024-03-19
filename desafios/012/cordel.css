@@ -10,15 +10,15 @@
 }
 
 * {
-    margin: auto;
+    margin: 0px;
     padding: 0px;
-    
 }
 
-body {
+html,body {
     min-height: 100vh;
     background-color: darkgray;
     font-family: var(--fonte1);
+    margin: auto;
 }
 
 header {
@@ -28,12 +28,11 @@ header {
     text-align: center;
     padding-bottom: 0px;
     font-size: 10vh;
-    
+    block-size:40vh ;
 
 }
 
 h1 {
-    margin:auto;
     padding-top: 70px;
     padding-bottom: 0px;
     font-variant: small-caps;
