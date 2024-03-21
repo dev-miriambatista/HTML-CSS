@@ -7,11 +7,22 @@
     <title>Tabelas Grandes</title>
     <style>
         table {
-            width: 600px;
+            width: 350px;
             border: 2px solid black;
             border-collapse: collapse;
             text-align: center;
+            position: relative;
         }
+caption{
+    background-color: brown;
+    font: normal bolder 2em arial;
+    color: bisque;
+}
+ tbody>tr:nth-child(2n){
+ background-color: #e043cb;
+ }
+
+
         thead, tfoot{
             background-color: aquamarine;
             color:black;
@@ -26,11 +37,12 @@
     </style>
 </head>
 <table>
+    <caption> População Brasileira</caption>
     <thead>
         <tr>
-            <th>Posição</td>
-            <th>Unidade Federativa</td>
-            <th>População</td>
+            <th scope="col" style="width:10px;">Posição</td>
+            <th scope="col" style="width:220px;">Unidade Federativa</td>
+            <th scope="col" style="width:50px;">População</td>
         </tr>
     </thead>
     <tbody>
@@ -172,7 +184,7 @@
 </tbody>
 <tfoot>
     <tr>
-        <th> Total de habitantes</th>
+        <th scope="ro"> Total de habitantes</th>
         <td>Valor em quantidade de pessoas</td>
         <td>213,993,437</td>
     </tr>
