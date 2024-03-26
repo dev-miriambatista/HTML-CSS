@@ -5,38 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uso de iframe</title>
     <style>
-        body{
+        body {
             font-family: arial;
         }
-        #referencia{
+
+        #referencia {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.5em;
         }
 
-        iframe{
-            display: block;
+        iframe {
+            display: inline-block;
             text-align: center;
-            width:98vw;
+            width: 98vw;
+            height: 350px;
+        }
+
+        iframe h1 {
+            background-color: blueviolet;
+            display: inline-block;
+            margin:0px;
+            padding: 0px;
+        }
+        iframe p{
+            display: inline-block;
         }
     </style>
 </head>
+
 <body>
     <h1>Faça uma escolha</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit earum deleniti placeat! Eveniet laborum possimus vel neque, deleniti earum? Error minima repellat temporibus aperiam explicabo reprehenderit enim. Ad, cum quasi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam saepe vitae accusantium asperiores reiciendis?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit earum deleniti placeat! Eveniet laborum
+        possimus vel neque, deleniti earum? Error minima repellat temporibus aperiam explicabo reprehenderit enim. Ad,
+        cum quasi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam saepe vitae accusantium asperiores
+        reiciendis?</p>
 
-<ul>
-    <li><a href="" target="versiculos">Atos dos Apóstolos 1:8</a></li>
-    <li><a href="paginas-extras/pag01.html" target="versiculos">Atos dos Apóstolos 1:8</a></li>
-    <li><a href="paginas-extras/pag02.html" target="versiculos">Salmos 10</a></li>
-    <li><a href="paginas-extras/pag03.html" target="versiculos">Lamentações 3:22-23</a></li>
-</ul>
-        
-     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus sunt ea totam tempore dolorem eaque eum sapiente, excepturi id, voluptate, perferendis quasi aliquid quam odit! Saepe deserunt deleniti itaque assumenda.</p>
+    <ul>
 
-     <iframe id="referencia" name="versiculos"  srcdoc="capaiframe.html"><p>Infelizmente seu navegador não é compatível com isso</p></iframe>
+        <li><a href="paginas-extras/pag01.html" target="versiculos">Atos dos Apóstolos 1:8</a></li>
+        <li><a href="paginas-extras/pag02.html" target="versiculos">Salmos 10</a></li>
+        <li><a href="paginas-extras/pag03.html" target="versiculos">Lamentações 3:22-23</a></li>
+    </ul>
 
-     
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus sunt ea totam tempore dolorem eaque eum
+        sapiente, excepturi id, voluptate, perferendis quasi aliquid quam odit! Saepe deserunt deleniti itaque
+        assumenda.</p>
 
-        <p>Quam neque, dolorem, nam eveniet dolore voluptatum consequuntur tempora animi ea ipsum assumenda? Doloremque, nam amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sit repudiandae? Quos odio soluta, iure praesentium ipsum perspiciatis iste repellat eos aut, sapiente adipisci optio, et qui velit expedita animi?</p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ex in nesciunt earum veritatis, id rerum omnis laborum necessitatibus provident non dolore, illum sint. Assumenda odio maxime porro nihil eos?</p>
+
+
+
+
+        <iframe id="referencia" name="versiculos"
+        srcdoc="<img src='girl.webp'><h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, explicabo exercitationem sint est earum </h1> <p>quaerat modi corrupti dolorem ea atque! Quia dolorum, inventore aliquid officiis nulla quidem. Iusto, optio animi! </p>">
+        <p>Infelizmente seu navegador não é compatível com isso</p>
+    </iframe>
+
+
+
+    <p>Quam neque, dolorem, nam eveniet dolore voluptatum consequuntur tempora animi ea ipsum assumenda? Doloremque, nam
+        amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sit repudiandae? Quos odio soluta, iure
+        praesentium ipsum perspiciatis iste repellat eos aut, sapiente adipisci optio, et qui velit expedita animi?</p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ex in nesciunt earum veritatis, id rerum omnis
+    laborum necessitatibus provident non dolore, illum sint. Assumenda odio maxime porro nihil eos?</p>
 </body>
+
 </html>
