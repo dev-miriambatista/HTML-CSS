@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.5.1",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this._interceptClickListeners(this),window.addEventListener("pageshow",e=>{this.persisted=e.persisted,this.everythingLoaded&&this._triggerLastFunctions()}),document.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(e){if(document.hidden){e._triggerListener();return}this.triggerEvents.forEach(t=>window.addEventListener(t,e.userEventHandler,{passive:!0})),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(e=>window.removeEventListener(e,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!0),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!1),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!1),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))})}_interceptClickListeners(e){EventTarget.prototype.addEventListenerBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(t,i,r){"click"!==t||e.windowLoaded||i===e.clickHandler||e.interceptedClickListeners.push({target:this,func:i,options:r}),(this||window).addEventListenerBase(t,i,r)}}_disableOtherEventListeners(e,t){this.interceptedClickListeners.forEach(i=>{i.target===e&&(t?e.removeEventListener("click",i.func,i.options):e.addEventListener("click",i.func,i.options))}),e.parentNode!==document.documentElement&&this._disableOtherEventListeners(e.parentNode,t)}_waitForPendingClicks(){return new Promise(e=>{this._isClickPending?this._pendingClickFinished=e:e()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(e,t,i){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(i,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach(t=>{let i=t.getAttribute("data-rocket-src");if(i&&0!==i.indexOf("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{let r=new URL(i).origin;r!==location.origin&&e.push({src:r,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}catch(n){}}}),e=[...new Map(e.map(e=>[JSON.stringify(e),e])).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._pendingWebpackRequests(this),await this._triggerWindowLoad()}catch(e){console.error(e)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{e.hasAttribute("data-rocket-src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)})}async _transformScript(e){if(await this._littleBreath(),!0===e.noModule&&"noModule"in HTMLScriptElement.prototype){e.setAttribute("data-rocket-status","skipped");return}return new Promise(t=>{let i;function r(){(i||e).setAttribute("data-rocket-status","executed"),t()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)i=document.createElement("script"),[...e.attributes].forEach(e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),"data-rocket-src"===t&&(t="src"),i.setAttribute(t,e.nodeValue))}),e.text&&(i.text=e.text),i.hasAttribute("src")?(i.addEventListener("load",r),i.addEventListener("error",function(){i.setAttribute("data-rocket-status","failed"),t()}),setTimeout(()=>{i.isConnected||t()},1)):(i.text=e.text,r()),e.parentNode.replaceChild(i,e);else{let n=e.getAttribute("data-rocket-type"),s=e.getAttribute("data-rocket-src");n?(e.type=n,e.removeAttribute("data-rocket-type")):e.removeAttribute("type"),e.addEventListener("load",r),e.addEventListener("error",function(){e.setAttribute("data-rocket-status","failed"),t()}),s?(e.removeAttribute("data-rocket-src"),e.src=s):e.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(e.text)))}}catch(a){e.setAttribute("data-rocket-status","failed"),t()}})}async _loadScriptsFromList(e){let t=e.shift();return t&&t.isConnected?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var i=document.createDocumentFragment();e.forEach(e=>{let r=e.getAttribute&&e.getAttribute("data-rocket-src")||e.src;if(r){let n=document.createElement("link");n.href=r,n.rel=t,"preconnect"!==t&&(n.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),e.crossOrigin&&(n.crossOrigin=e.crossOrigin),e.integrity&&(n.integrity=e.integrity),i.appendChild(n),this.trash.push(n)}}),document.head.appendChild(i)}_delayEventListeners(e){let t={};function i(i,r){return t[r].eventsToRewrite.indexOf(i)>=0&&!e.everythingLoaded?"rocket-"+i:i}function r(e,r){var n;!t[n=e]&&(t[n]={originalFunctions:{add:n.addEventListener,remove:n.removeEventListener},eventsToRewrite:[]},n.addEventListener=function(){arguments[0]=i(arguments[0],n),t[n].originalFunctions.add.apply(n,arguments)},n.removeEventListener=function(){arguments[0]=i(arguments[0],n),t[n].originalFunctions.remove.apply(n,arguments)}),t[e].eventsToRewrite.push(r)}function n(t,i){let r=t[i];t[i]=null,Object.defineProperty(t,i,{get:()=>r||function(){},set(n){e.everythingLoaded?r=n:t["rocket"+i]=r=n}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t;function i(t){return e.everythingLoaded?t:t.split(" ").map(e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e).join(" ")}function r(r){if(r&&r.fn&&!e.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(t){return e.domReadyFired?t.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>t.bind(document)(r)),r([])};let n=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let t=arguments[0][e];delete arguments[0][e],arguments[0][i(e)]=t})),n.apply(this,arguments),this},e.allJQueries.push(r)}t=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>t,set(e){r(e)}})}async _pendingWebpackRequests(e){let t=document.querySelector("script[data-webpack]");async function i(){return new Promise(e=>{t.addEventListener("load",e),t.addEventListener("error",e)})}t&&(await i(),await e._requestAnimFrame(),await e._pendingWebpackRequests(e))}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async _triggerWindowLoad(){await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(e=>e(window).trigger("rocket-jquery-load")),await this._littleBreath();let e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}_triggerLastFunctions(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}_handleDocumentWrite(){let e=new Map;document.write=document.writeln=function(t){let i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+t);let r=document.createRange(),n=i.parentElement,s=e.get(i);void 0===s&&(s=i.nextSibling,e.set(i,s));let a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(e=>setTimeout(e)):new Promise(e=>requestAnimationFrame(e))}_emptyTrash(){this.trash.forEach(e=>e.remove())}static run(){let e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://patriciaalves.com.br/xmlrpc.php">
+
+<title>Quantos Livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica? |</title><style id="wpr-usedcss">:where(.wp-block-button__link){border-radius:9999px;box-shadow:none;padding:calc(.667em + 2px) calc(1.333em + 2px);text-decoration:none}:where(.wp-block-calendar table:not(.has-background) th){background:#ddd}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}:where(.wp-block-post-comments input[type=submit]){border:none}:where(.wp-block-cover-image:not(.has-text-color)),:where(.wp-block-cover:not(.has-text-color)){color:#fff}:where(.wp-block-cover-image.is-light:not(.has-text-color)),:where(.wp-block-cover.is-light:not(.has-text-color)){color:#000}:where(.wp-block-file){margin-bottom:1.5em}:where(.wp-block-file__button){border-radius:2em;display:inline-block;padding:.5em 1em}:where(.wp-block-file__button):is(a):active,:where(.wp-block-file__button):is(a):focus,:where(.wp-block-file__button):is(a):hover,:where(.wp-block-file__button):is(a):visited{box-shadow:none;color:#fff;opacity:.85;text-decoration:none}:where(.wp-block-latest-comments:not([style*=line-height] .wp-block-latest-comments__comment)){line-height:1.1}:where(.wp-block-latest-comments:not([style*=line-height] .wp-block-latest-comments__comment-excerpt p)){line-height:1.8}ul{box-sizing:border-box}:where(.wp-block-navigation.has-background .wp-block-navigation-item a:not(.wp-element-button)),:where(.wp-block-navigation.has-background .wp-block-navigation-submenu a:not(.wp-element-button)){padding:.5em 1em}:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item a:not(.wp-element-button)),:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-submenu a:not(.wp-element-button)),:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-submenu button.wp-block-navigation-item__content),:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-pages-list__item button.wp-block-navigation-item__content){padding:.5em 1em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}:where(.wp-block-post-excerpt){margin-bottom:var(--wp--style--block-gap);margin-top:var(--wp--style--block-gap)}:where(.wp-block-preformatted.has-background){padding:1.25em 2.375em}:where(.wp-block-pullquote){margin:0 0 1em}:where(.wp-block-search__button){border:1px solid #ccc;padding:6px 10px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper){border:1px solid #949494;box-sizing:border-box;padding:4px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input{border:none;border-radius:0;padding:0 4px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input:focus{outline:0}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) :where(.wp-block-search__button){padding:4px 8px}:where(.wp-block-term-description){margin-bottom:var(--wp--style--block-gap);margin-top:var(--wp--style--block-gap)}:where(pre.wp-block-verse){font-family:inherit}.entry-content{counter-reset:footnotes}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.screen-reader-text{clip:rect(1px,1px,1px,1px);word-wrap:normal!important;border:0;-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{clip:auto!important;background-color:#ddd;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}body{--wp--preset--color--black:#000000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#ffffff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--color--neve-link-color:var(--nv-primary-accent);--wp--preset--color--neve-link-hover-color:var(--nv-secondary-accent);--wp--preset--color--nv-site-bg:var(--nv-site-bg);--wp--preset--color--nv-light-bg:var(--nv-light-bg);--wp--preset--color--nv-dark-bg:var(--nv-dark-bg);--wp--preset--color--neve-text-color:var(--nv-text-color);--wp--preset--color--nv-text-dark-bg:var(--nv-text-dark-bg);--wp--preset--color--nv-c-1:var(--nv-c-1);--wp--preset--color--nv-c-2:var(--nv-c-2);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgba(6, 147, 227, 1) 0%,rgb(155, 81, 224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,rgb(122, 220, 180) 0%,rgb(0, 208, 130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgba(252, 185, 0, 1) 0%,rgba(255, 105, 0, 1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgba(255, 105, 0, 1) 0%,rgb(207, 46, 46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,rgb(238, 238, 238) 0%,rgb(169, 184, 195) 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,rgb(74, 234, 220) 0%,rgb(151, 120, 209) 20%,rgb(207, 42, 186) 40%,rgb(238, 44, 130) 60%,rgb(251, 105, 98) 80%,rgb(254, 248, 76) 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,rgb(255, 206, 236) 0%,rgb(152, 150, 240) 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,rgb(254, 205, 165) 0%,rgb(254, 45, 45) 50%,rgb(107, 0, 62) 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,rgb(255, 203, 112) 0%,rgb(199, 81, 192) 50%,rgb(65, 88, 208) 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,rgb(255, 245, 203) 0%,rgb(182, 227, 212) 50%,rgb(51, 167, 181) 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,rgb(202, 248, 128) 0%,rgb(113, 206, 126) 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,rgb(2, 3, 129) 0%,rgb(40, 116, 252) 100%);--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px;--wp--preset--spacing--20:0.44rem;--wp--preset--spacing--30:0.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem;--wp--preset--shadow--natural:6px 6px 9px rgba(0, 0, 0, .2);--wp--preset--shadow--deep:12px 12px 50px rgba(0, 0, 0, .4);--wp--preset--shadow--sharp:6px 6px 0px rgba(0, 0, 0, .2);--wp--preset--shadow--outlined:6px 6px 0px -3px rgba(255, 255, 255, 1),6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp:6px 6px 0px rgba(0, 0, 0, 1)}:where(.is-layout-flex){gap:.5em}:where(.is-layout-grid){gap:.5em}:where(.wp-block-post-template.is-layout-flex){gap:1.25em}:where(.wp-block-post-template.is-layout-grid){gap:1.25em}:where(.wp-block-columns.is-layout-flex){gap:2em}:where(.wp-block-columns.is-layout-grid){gap:2em}button,input[type=button],input[type=submit]{cursor:pointer;box-sizing:border-box;border-color:currentColor;text-align:center;font-family:var(--bodyfontfamily),var(--nv-fallback-ff)}button,input[type=button],input[type=submit]{cursor:pointer;box-sizing:border-box;background:var(--primarybtnbg);color:var(--primarybtncolor);border-style:solid;border-color:currentColor;fill:currentColor;border-width:var(--primarybtnborderwidth,0);border-radius:var(--primarybtnborderradius,3px);padding:var(--primarybtnpadding,13px 15px);font-weight:var(--btnfontweight,700);font-size:var(--btnfs,var(--bodyfontsize));line-height:var(--btnlineheight,1.6);letter-spacing:var(--btnletterspacing,var(--bodyletterspacing));text-transform:var(--btntexttransform,none)}button:hover,input[type=button]:hover,input[type=submit]:hover{background:var(--primarybtnhoverbg);color:var(--primarybtnhovercolor);border-color:var(--primarybtnhovercolor)}form input:read-write{border-style:solid;border-color:var(--formfieldbordercolor);border-width:var(--formfieldborderwidth);border-radius:var(--formfieldborderradius,3px);background:var(--formfieldbgcolor);color:var(--formfieldcolor);padding:var(--formfieldpadding);text-transform:var(--formfieldtexttransform);font-weight:var(--formfieldfontweight);font-family:var(--bodyfontfamily);font-size:var(--formfieldfontsize);letter-spacing:var(--formfieldletterspacing);line-height:var(--formfieldlineheight)}form label{font-weight:var(--formlabelfontweight,var(--bodyfontweight));text-transform:var(--formlabeltexttransform);letter-spacing:var(--formlabelletterspacing);line-height:var(--formlabellineheight);font-size:var(--formlabelfontsize,var(--bodyfontsize))}.nv-meta-list li{font-weight:var(--fontweight);text-transform:var(--texttransform);letter-spacing:var(--letterspacing);line-height:var(--lineheight);font-size:var(--fontsize)}.title.entry-title{font-size:var(--fontsize,var(--h1fontsize));font-weight:var(--fontweight,var(--h1fontweight));line-height:var(--lineheight,var(--h1lineheight));letter-spacing:var(--letterspacing,var(--h1letterspacing));text-transform:var(--texttransform,var(--h1texttransform))}body,h1,h2,h3,h5,html,iframe,li,p,ul{margin:0;padding:0}h1,h2,h3,h5{font-size:100%;font-weight:400}ul{list-style:none}button,input{margin:0}html{box-sizing:border-box;-ms-overflow-style:scrollbar}*,::after,::before{box-sizing:border-box}img,object{height:auto;max-width:100%}iframe{border:0;max-width:100%}.container{width:100%;padding-right:15px;padding-left:15px;margin:0 auto;max-width:var(--container)}.row{display:flex;flex-wrap:wrap;margin:0 -15px}.col{padding:0 15px;margin:0 auto;flex-grow:1;max-width:100%}html{font-size:100%}body{background-color:var(--nv-site-bg);color:var(--nv-text-color);font-size:var(--bodyfontsize);line-height:var(--bodylineheight);letter-spacing:var(--bodyletterspacing);font-family:var(--bodyfontfamily),var(--nv-fallback-ff);text-transform:var(--bodytexttransform);font-weight:var(--bodyfontweight);overflow-x:hidden;direction:ltr;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}h1,h2,h3,h5{margin-bottom:30px;font-family:var(--headingsfontfamily),var(--nv-fallback-ff)}p{margin-bottom:30px}a{--linkdeco:none;color:var(--nv-primary-accent);cursor:pointer;text-decoration:var(--linkdeco)}a:focus,a:hover{opacity:.9;color:var(--nv-secondary-accent)}.entry-content a:not([class]),.widget_text a:not([class]){--linkdeco:underline}ins{text-decoration:none}h1{font-size:var(--h1fontsize);font-weight:var(--h1fontweight);line-height:var(--h1lineheight);letter-spacing:var(--h1letterspacing);text-transform:var(--h1texttransform)}h2{font-size:var(--h2fontsize);font-weight:var(--h2fontweight);line-height:var(--h2lineheight);letter-spacing:var(--h2letterspacing);text-transform:var(--h2texttransform)}h3{font-size:var(--h3fontsize);font-weight:var(--h3fontweight);line-height:var(--h3lineheight);letter-spacing:var(--h3letterspacing);text-transform:var(--h3texttransform)}h5{font-size:var(--h5fontsize);font-weight:var(--h5fontweight);line-height:var(--h5lineheight);letter-spacing:var(--h5letterspacing);text-transform:var(--h5texttransform)}ul{padding-left:var(--listpad,0)}ul{list-style:var(--liststyle,none)}.show-on-focus{position:absolute;width:1px;height:1px;clip:rect(1px,1px,1px,1px);top:32px;background:var(--nv-site-bg);padding:10px 15px}.show-on-focus:focus{z-index:999999;width:auto;height:auto;clip:auto}.screen-reader-text{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}.nv-icon{fill:currentColor}.nv-search{display:flex}.site-logo{align-items:center;display:flex}.site-logo img{max-width:var(--maxwidth);display:block;margin:0 auto}.site-logo h1,.site-logo p{font-size:var(--fs);font-weight:var(--h1fontweight);line-height:var(--bodylineheight);letter-spacing:var(--bodyletterspacing);text-transform:var(--texttransform,var(--bodytexttransform));margin:0}.site-logo small{display:block}.header-menu-sidebar .nav-ul .sub-menu,.nav-ul li:hover>.sub-menu,.sub-menu.dropdown-open{opacity:1;visibility:visible}.caret{transition:.3s ease}.dd-title{flex-grow:var(--flexg);display:flex;align-items:center}.nav-ul{display:flex;flex-wrap:wrap;margin-right:calc(var(--spacing)/ 2 * -1);margin-left:calc(var(--spacing)/ 2 * -1)}.nav-ul>li{margin:0 calc(var(--spacing)/ 2)}.nav-ul li a{min-height:var(--height);color:var(--color);position:relative;width:100%;display:flex;align-items:center}.nav-ul .caret{line-height:0;justify-content:center;display:flex}.nav-ul .caret svg{width:.5em;height:.5em}.nav-ul li{display:block;position:relative}.nav-ul li>.wrap{display:flex;align-items:center}.nav-ul li:hover>.wrap .caret,.nav-ul li:hover>.wrap>a{color:var(--hovercolor,var(--nv-primary-accent))}.nav-ul .sub-menu{background:var(--bgcolor,var(--overlaycolor));z-index:100;position:absolute;top:100%;box-shadow:rgba(149,157,165,.2) 0 8px 24px;visibility:hidden;opacity:0;right:0}.nav-ul .sub-menu li{min-width:150px;width:100%}.nav-ul .sub-menu li>.wrap{padding:10px 20px;white-space:nowrap;display:flex}.nav-ul .sub-menu .sub-menu{left:100%;top:0;right:unset}.header-menu-sidebar .nv-nav-wrap{width:100%}.header-menu-sidebar .nav-ul{flex-direction:column;width:100%}.header-menu-sidebar .nav-ul li{width:100%}.header-menu-sidebar .nav-ul li:not([class*=block])>.wrap>a{padding:15px 0;white-space:unset}.header-menu-sidebar .nav-ul .caret svg{width:1em;height:1em}.header-menu-sidebar .nav-ul .caret-wrap{margin:-15px 0;padding:15px}.header-menu-sidebar .nav-ul .caret-wrap.dropdown-open .caret{transform:rotateX(180deg)}.header-menu-sidebar .nav-ul .sub-menu{left:unset!important;top:unset!important;right:unset!important;background:0;position:relative;max-width:100%;box-shadow:none;display:none}.header-menu-sidebar .nav-ul .sub-menu.dropdown-open{display:block;margin-left:10px}.nv-nav-wrap ul.primary-menu-ul>li i{margin-top:0;font-size:inherit;width:auto;height:auto}.nv-nav-search{transition:opacity .3s;position:absolute;visibility:hidden;opacity:0;right:0;width:auto;padding:10px;cursor:unset;z-index:100;background-color:var(--nv-site-bg);box-shadow:rgba(149,157,165,.2) 0 8px 24px;display:flex;align-items:center}.nv-nav-search .container{padding:0}.menu-item-nav-search.active .nv-nav-search{opacity:1;visibility:visible}.menu-item-nav-search{cursor:pointer;outline:0}.menu-item-nav-search .nv-icon:hover{color:var(--hovercolor)}.menu-item-nav-search svg{width:var(--iconsize);height:var(--iconsize)}.menu-item-nav-search.minimal{position:relative}.menu-item-nav-search.minimal .search-field{width:200px}.menu-item-nav-search.minimal .nv-nav-search{display:flex;align-items:center;right:auto;left:0;top:100%}.menu-item-nav-search.floating .nv-nav-search{align-items:unset;transition:top .2s ease-out;position:fixed;top:-100%;left:0}.menu-item-nav-search.floating.active .nv-nav-search{top:0}.header-menu-sidebar .menu-item-nav-search.floating .nv-nav-search{position:absolute}.menu-item-nav-search.canvas .nv-nav-search{position:fixed;top:0;bottom:0;width:100%;display:flex;justify-content:center;align-items:center}.menu-item-nav-search.canvas .nv-nav-search .close-container{position:absolute;top:30px;text-align:right}.nav-clickaway-overlay{position:fixed;width:100%;left:0;right:0;top:0;z-index:90;height:100vh}.close-responsive-search{background:0;border:0;--primarybtnhoverbg:0}.close-responsive-search>svg{fill:var(--nv-text-color);width:var(--formfieldfontsize);min-width:25px;min-height:25px}.style-border-bottom>ul>li>.wrap::after{bottom:0}.m-style>ul>li>.wrap:hover::after{width:100%}.m-style>ul>li>.wrap::after{position:absolute;content:"";margin:0 auto;width:0;height:2px;transition:all .3s ease;right:0;left:0;pointer-events:none;background-color:var(--hovercolor,var(--nv-primary-accent,currentColor))}.navbar-toggle-wrapper{align-items:center}.navbar-toggle{--primarybtncolor:var(--color);--primarybtnhovercolor:var(--color);--primarybtnbg:var(--bgcolor, transparent);--primarybtnhoverbg:var(--bgcolor, transparent);--primarybtnborderwidth:var(--borderwidth, 1px);--primarybtnborderradius:var(--borderradius, 0);padding:var(--padding,10px 15px);box-shadow:none;display:flex;align-items:center}.navbar-toggle:focus{outline:solid 1px}.icon-bar{background-color:currentColor;transition:all .1s ease;position:relative;display:block;width:15px;height:2px}.icon-bar:nth-child(2){margin:3px 0}.is-menu-sidebar .navbar-toggle .icon-bar:first-child{transform:rotate(45deg);top:5px}.is-menu-sidebar .navbar-toggle .icon-bar:nth-child(2){opacity:0}.is-menu-sidebar .navbar-toggle .icon-bar:nth-child(3){transform:rotate(-45deg);bottom:5px}.wrapper{display:flex;min-height:100vh;flex-direction:column;position:relative;transition:all .3s cubic-bezier(.79,.14,.15,.86)}body>.wrapper:not(.et-fb-iframe-ancestor){overflow:hidden}.neve-main{flex:1 auto}input[type=number],input[type=search],input[type=submit]{display:inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:0;resize:vertical}input:read-write:focus{outline:0;box-shadow:0 0 3px 0 var(--nv-secondary-accent);--formfieldbordercolor:var(--nv-secondary-accent)}button,input{line-height:inherit;box-sizing:border-box}::placeholder{color:inherit;opacity:.5}label{display:inline-block}.widget-search{width:100%;margin:0!important}.search-form{display:flex;max-width:100%;line-height:1;--primarybtnbg:var(--formfieldbgcolor);--primarybtnhoverbg:var(--formfieldbgcolor);--primarybtncolor:var(--formfieldbordercolor);--primarybtnhovercolor:var(--formfieldbordercolor)}.search-form svg{fill:var(--formfieldcolor);width:var(--formfieldfontsize);opacity:.5;height:auto}.search-form .search-submit{display:flex;justify-content:center;align-items:center;min-width:45px;z-index:1;--primarybtnborderwidth:var(--formfieldborderwidth);--primarybtnborderradius:var(--formfieldborderradius);--primarybtnpadding:var(--formfieldpadding);border-bottom-left-radius:0;border-top-left-radius:0;border-left:0;border-color:var(--formfieldbordercolor);position:relative;height:var(--height);overflow:hidden;white-space:nowrap}.search-form .search-submit::before{content:"";display:block;width:3px;height:100%;background-color:var(--formfieldbgcolor);left:-3px;top:0;bottom:0;position:absolute}.search-form .search-field{overflow:hidden;text-overflow:ellipsis;height:var(--height);border-right:0;flex-grow:1;border-top-right-radius:0;border-bottom-right-radius:0;width:calc(100% - 45px);max-width:100%}.search-form .search-field:focus~button{box-shadow:0 0 3px 0 var(--nv-secondary-accent);border-color:var(--nv-secondary-accent)}.nv-meta-list{margin-bottom:20px;font-size:.9em}.nv-meta-list li,.nv-meta-list span{display:inline-block}.nv-meta-list li:not(:last-child)::after,.nv-meta-list span:not(:last-child)::after{content:"/";padding:0 8px}.entry-title{word-wrap:break-word}.entry-title a{color:var(--nv-text-color)}.nv-index-posts{margin-top:60px}.posts-wrapper>article{width:var(--postwidth)}.posts-wrapper{display:flex;flex-wrap:wrap;margin-bottom:40px}article{word-break:break-word}body:not(.nv-blog-default) .posts-wrapper{margin-left:calc(-1 * var(--gridspacing,30px)/ 2);margin-right:calc(-1 * var(--gridspacing,30px)/ 2)}body:not(.nv-blog-default) .posts-wrapper article{margin-bottom:calc(var(--gridspacing,30px));padding:0 calc(var(--gridspacing,30px)/ 2)}.nv-loader{height:40px;width:40px;border-radius:50%;border:3px solid var(--nv-primary-accent);border-left:3px solid transparent;animation:1s linear infinite spin;margin:0 auto;display:none}@keyframes spin{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.nv-single-post-wrap>div:first-child{margin-top:60px}.nv-single-post-wrap>div:last-child{padding-bottom:30px}.nv-single-post-wrap>div:not(:last-child){margin-bottom:var(--spacing,60px)}.entry-header{text-align:var(--textalign,center)}.entry-header .title{margin-bottom:10px}code{background:#d0effb;border-radius:5px;border:1px solid var(--nv-light-bg);padding:0 3px;color:#333}.nv-content-wrap{--listpad:20px;--liststyle:disc;--img-m:24px}.nv-content-wrap ul{margin:30px 0}.nv-content-wrap li{margin-top:10px}.nv-index-posts,.nv-single-post-wrap{margin-bottom:60px}.nv-sidebar-wrap{padding:60px 15px;margin-bottom:20px;flex-grow:1}.widget{word-break:break-word;margin-bottom:40px}.widget:last-child{margin:0}.widget .widget-title{margin-bottom:10px;font-weight:700;font-size:var(--h4fontsize)}.widget ul{padding:0}.widget ul ul{padding-left:10px}.widget li{margin-top:10px}.widget_recent_entries a{color:var(--nv-text-color)}.nv-title-meta-wrap .neve-breadcrumbs-wrapper{margin-bottom:30px;display:block}.neve-breadcrumbs-wrapper{font-size:14px}.neve-breadcrumbs-wrapper a{color:#676767}.builder-item--footer-menu,.component-wrap,.item--inner,.menu-item-nav-search,.nav-ul .wrap a .dd-title,.nav-ul a,.site-logo,footer .nav-ul{justify-content:var(--justify,flex-start);text-align:var(--textalign,left)}@media (min-width:960px){.neve-main>.container .col{max-width:70%}.neve-main>.container>.row{flex-wrap:nowrap}.nv-sidebar-wrap{max-width:30%}.nv-sidebar-wrap.nv-right{padding-left:45px}}.header-menu-sidebar{padding:0;position:fixed;max-width:100%;top:0;z-index:999900;visibility:hidden;display:flex;height:100vh}.header-menu-sidebar .navbar-toggle-wrapper{display:flex;justify-content:flex-end;padding:8px 10px}.header-menu-sidebar .navbar-toggle-wrapper button.navbar-toggle{position:relative}.tcb{transition:all .3s cubic-bezier(.79,.14,.15,.86)}.header-menu-sidebar-bg{background:var(--bgcolor);color:var(--color);position:relative;display:flex;flex-direction:column;word-wrap:break-word;width:100%}.header-menu-sidebar-inner{padding:20px 0;overflow-x:hidden;height:100%;display:none;opacity:0;transition:opacity .3s ease}.is-menu-sidebar .header-menu-sidebar-inner{display:block;opacity:1}.hiding-header-menu-sidebar .header-menu-sidebar-inner{display:block;transition:all .3s ease;opacity:0}.header-menu-sidebar-inner .item--inner{width:100%}.hiding-header-menu-sidebar .close-sidebar-panel{transition:.3s ease;opacity:0}.menu_sidebar_slide_left .header-menu-sidebar{left:0;transform:translateX(-100%)}.menu_sidebar_slide_right .header-menu-sidebar{right:0;transform:translateX(100%)}.menu_sidebar_pull_left .wrapper .header-menu-sidebar{left:0;transform:translateX(-100%)}.menu_sidebar_pull_right .wrapper .header-menu-sidebar{right:0;transform:translateX(100%)}.menu_sidebar_dropdown .header-menu-sidebar{box-shadow:none;position:absolute;top:unset;width:100%;display:block}.menu_sidebar_dropdown .header-menu-sidebar-inner{max-height:0;padding:0}.menu_sidebar_full_canvas .header-menu-sidebar{width:100%;bottom:0;right:0;opacity:0}.menu_sidebar_full_canvas .header-menu-sidebar-inner{flex-grow:1}.header-menu-sidebar .menu-item-nav-search{display:flex;align-items:center}.hfg-ov{top:0;bottom:0;right:0;left:0;background:rgba(0,0,0,.5);position:fixed;transform:translate3d(0,0,0);z-index:999899;transition:all .3s linear;visibility:hidden;opacity:0}.is-menu-sidebar .hfg-ov{visibility:visible;opacity:1}.hfg-pe{pointer-events:none}.is-menu-sidebar .hfg-pe{pointer-events:unset}.site-footer{position:relative;z-index:11}.site-footer .item--inner{width:100%}.site-footer .item--inner.has_menu{display:flex}.site-footer p:last-child{margin-bottom:0}.footer--row .hfg-slot{display:flex;flex-direction:column}.footer--row .row{display:grid;align-items:var(--valign)}.footer--row .builder-item{width:100%}@media (max-width:960px){footer .footer--row-inner .row{grid-template-columns:1fr}}.site-header{position:relative}.site-header .header--row-inner{align-items:center;display:flex}.builder-item{margin:4px 0;position:relative;min-height:1px;padding-right:15px;padding-left:15px}.hfg-slot{display:flex;align-items:center}.hfg-slot.right{justify-content:flex-end}.hfg-slot.center{justify-content:center}.header-menu-sidebar-bg,[class*=row-inner]{position:relative;background:var(--bgimage,var(--bgcolor,#fff));background-position:var(--bgposition,center);background-repeat:no-repeat;background-size:cover;background-attachment:var(--bgattachment)}.header-menu-sidebar-bg::before,[class*=row-inner]::before{display:block;width:100%;top:0;bottom:0;position:absolute;content:"";background-color:var(--overlaycolor);opacity:var(--bgoverlayopacity)}[class*=row-inner]:not(.footer--row-inner){border-bottom:var(--rowbwidth,0) solid var(--rowbcolor)}.footer--row-inner{border-top:var(--rowbwidth,0) solid var(--rowbcolor)}[data-row-id]{color:var(--color);background:var(--bgcolor)}[data-row-id] a{color:var(--color)}[data-row-id] .row{display:grid;grid-template-columns:auto auto;min-height:var(--height,auto)}.hfg_header.site-header{box-shadow:0 -1px 3px rgba(0,0,0,.1)}.header .builder-item .item--inner[class*=nav-icon]{padding:0!important}.hfg-grid{display:flex}@media (min-width:960px){.builder-item{margin:8px 0}.hide-on-desktop{display:none}}@media (max-width:959px){.hide-on-tablet{display:none}}@media (max-width:576px){.hide-on-mobile{display:none}}.component-wrap{display:flex;margin:4px 0}.builder-item .item--inner{color:var(--color);font-family:var(--fontfamily,var(--bodyfontfamily));font-size:var(--fontsize,var(--bodyfontsize));line-height:var(--lineheight,var(--bodylineheight));letter-spacing:var(--letterspacing,var(--bodyletterspacing));font-weight:var(--fontweight,var(--bodyfontweight));text-transform:var(--texttransform,var(--bodytexttransform));padding:var(--padding,0);margin:var(--margin,0);position:relative}.builder-item .item--inner.has_menu{position:unset}.nv-meta-list li.meta:not(:last-child):after{content:"/"}:root{--container:748px;--postwidth:100%;--primarybtnbg:var(--nv-primary-accent);--primarybtnhoverbg:var(--nv-primary-accent);--primarybtncolor:#fff;--secondarybtncolor:var(--nv-primary-accent);--primarybtnhovercolor:#fff;--secondarybtnhovercolor:var(--nv-primary-accent);--primarybtnborderradius:3px;--secondarybtnborderradius:3px;--secondarybtnborderwidth:3px;--btnpadding:13px 15px;--primarybtnpadding:13px 15px;--secondarybtnpadding:calc(13px - 3px) calc(15px - 3px);--bodyfontfamily:Arial,Helvetica,sans-serif;--bodyfontsize:15px;--bodylineheight:1.6;--bodyletterspacing:0px;--bodyfontweight:400;--h1fontsize:36px;--h1fontweight:700;--h1lineheight:1.2;--h1letterspacing:0px;--h1texttransform:none;--h2fontsize:28px;--h2fontweight:700;--h2lineheight:1.3;--h2letterspacing:0px;--h2texttransform:none;--h3fontsize:24px;--h3fontweight:700;--h3lineheight:1.4;--h3letterspacing:0px;--h3texttransform:none;--h4fontsize:20px;--h4fontweight:700;--h4lineheight:1.6;--h4letterspacing:0px;--h4texttransform:none;--h5fontsize:16px;--h5fontweight:700;--h5lineheight:1.6;--h5letterspacing:0px;--h5texttransform:none;--h6fontsize:14px;--h6fontweight:700;--h6lineheight:1.6;--h6letterspacing:0px;--h6texttransform:none;--formfieldborderwidth:2px;--formfieldborderradius:3px;--formfieldbgcolor:var(--nv-site-bg);--formfieldbordercolor:#dddddd;--formfieldcolor:var(--nv-text-color);--formfieldpadding:10px 12px}.nv-meta-list{--avatarsize:20px}.single .nv-meta-list{--avatarsize:20px}.entry-header{--textalign:left}.page,.single:not(.single-product){--c-vspace:0 0 0 0}.header-main{--rowbwidth:0px;--rowbcolor:var(--nv-light-bg);--color:#000000;--bgcolor:#f9f9f9}.header-menu-sidebar-bg{--justify:flex-start;--textalign:left;--flexg:1;--wrapdropdownwidth:auto;--color:var(--nv-text-color);--bgcolor:var(--nv-site-bg)}.header-menu-sidebar{width:360px}.builder-item--logo{--maxwidth:120px;--fs:24px;--padding:10px 0;--margin:0;--textalign:right;--justify:flex-end}.builder-item--nav-icon,.header-menu-sidebar .close-sidebar-panel .navbar-toggle{--borderradius:0}.builder-item--nav-icon{--label-margin:0 5px 0 0;--padding:10px 15px;--margin:0}.builder-item--primary-menu{--hovercolor:var(--nv-secondary-accent);--hovertextcolor:var(--nv-text-color);--activecolor:var(--nv-primary-accent);--spacing:20px;--height:25px;--padding:0;--margin:0;--fontsize:1em;--lineheight:1.6em;--letterspacing:0px;--fontweight:600;--texttransform:none;--iconsize:1em}.builder-item--header_search{--height:40px;--formfieldborderwidth:2px;--formfieldborderradius:2px;--padding:0;--margin:0}.builder-item--header_search_responsive{--iconsize:15px;--formfieldfontsize:14px;--formfieldborderwidth:2px;--formfieldborderradius:2px;--height:40px;--padding:0 10px;--margin:0}.footer-top-inner .row{grid-template-columns:1fr 3fr 1fr;--valign:flex-start}.footer-top{--rowbcolor:var(--nv-light-bg);--color:var(--nv-text-color);--bgcolor:var(--nv-site-bg)}.footer-bottom-inner .row{grid-template-columns:1fr 1fr 1fr;--valign:flex-start}.footer-bottom{--rowbcolor:var(--nv-light-bg);--color:var(--nv-text-dark-bg);--bgcolor:var(--nv-dark-bg)}.builder-item--footer-menu{--hovercolor:var(--nv-primary-accent);--spacing:20px;--height:25px;--padding:0;--margin:0;--fontsize:1em;--lineheight:1.6em;--letterspacing:0px;--fontweight:500;--texttransform:none;--iconsize:1em;--textalign:left;--justify:flex-start}@media(min-width:576px){:root{--container:992px;--postwidth:100%;--btnpadding:13px 15px;--primarybtnpadding:13px 15px;--secondarybtnpadding:calc(13px - 3px) calc(15px - 3px);--bodyfontsize:16px;--bodylineheight:1.6;--bodyletterspacing:0px;--h1fontsize:38px;--h1lineheight:1.2;--h1letterspacing:0px;--h2fontsize:30px;--h2lineheight:1.2;--h2letterspacing:0px;--h3fontsize:26px;--h3lineheight:1.4;--h3letterspacing:0px;--h4fontsize:22px;--h4lineheight:1.5;--h4letterspacing:0px;--h5fontsize:18px;--h5lineheight:1.6;--h5letterspacing:0px;--h6fontsize:14px;--h6lineheight:1.6;--h6letterspacing:0px}.nv-meta-list{--avatarsize:20px}.single .nv-meta-list{--avatarsize:20px}.entry-header{--textalign:left}.page,.single:not(.single-product){--c-vspace:0 0 0 0}.header-main{--rowbwidth:0px}.header-menu-sidebar-bg{--justify:flex-start;--textalign:left;--flexg:1;--wrapdropdownwidth:auto}.header-menu-sidebar{width:360px}.builder-item--logo{--maxwidth:120px;--fs:24px;--padding:10px 0;--margin:0;--textalign:right;--justify:flex-end}.builder-item--nav-icon{--label-margin:0 5px 0 0;--padding:10px 15px;--margin:0}.builder-item--primary-menu{--spacing:20px;--height:25px;--padding:0;--margin:0;--fontsize:1em;--lineheight:1.6em;--letterspacing:0px;--iconsize:1em}.builder-item--header_search{--height:40px;--formfieldborderwidth:2px;--formfieldborderradius:2px;--padding:0;--margin:0}.builder-item--header_search_responsive{--formfieldfontsize:14px;--formfieldborderwidth:2px;--formfieldborderradius:2px;--height:40px;--padding:0 10px;--margin:0}.builder-item--footer-menu{--spacing:20px;--height:25px;--padding:0;--margin:0;--fontsize:1em;--lineheight:1.6em;--letterspacing:0px;--iconsize:1em;--textalign:left;--justify:flex-start}}@media(min-width:960px){:root{--container:1170px;--postwidth:100%;--btnpadding:13px 15px;--primarybtnpadding:13px 15px;--secondarybtnpadding:calc(13px - 3px) calc(15px - 3px);--bodyfontsize:16px;--bodylineheight:1.7;--bodyletterspacing:0px;--h1fontsize:40px;--h1lineheight:1.1;--h1letterspacing:0px;--h2fontsize:32px;--h2lineheight:1.2;--h2letterspacing:0px;--h3fontsize:28px;--h3lineheight:1.4;--h3letterspacing:0px;--h4fontsize:24px;--h4lineheight:1.5;--h4letterspacing:0px;--h5fontsize:20px;--h5lineheight:1.6;--h5letterspacing:0px;--h6fontsize:16px;--h6lineheight:1.6;--h6letterspacing:0px}body:not(.single):not(.archive):not(.blog):not(.search):not(.error404) .neve-main>.container .col{max-width:100%}body:not(.single):not(.archive):not(.blog):not(.search):not(.error404) .nv-sidebar-wrap{max-width:0%}.neve-main>.single-post-container .nv-single-post-wrap.col{max-width:70%}.neve-main>.single-post-container .nv-sidebar-wrap{max-width:30%}.nv-meta-list{--avatarsize:20px}.single .nv-meta-list{--avatarsize:20px}.entry-header{--textalign:left}.page,.single:not(.single-product){--c-vspace:0 0 0 0}.header-main{--height:3px;--rowbwidth:3px}.header-menu-sidebar-bg{--justify:flex-start;--textalign:left;--flexg:1;--wrapdropdownwidth:auto}.header-menu-sidebar{width:360px}.builder-item--logo{--maxwidth:120px;--fs:24px;--padding:10px 0;--margin:0;--textalign:right;--justify:flex-end}.builder-item--nav-icon{--label-margin:0 5px 0 0;--padding:10px 15px;--margin:0}.builder-item--primary-menu{--spacing:10px;--height:25px;--padding:0;--margin:0;--fontsize:14px;--lineheight:1.6em;--letterspacing:0px;--iconsize:14px}.builder-item--header_search{--height:40px;--formfieldborderwidth:2px;--formfieldborderradius:2px;--padding:0;--margin:0}.builder-item--header_search_responsive{--formfieldfontsize:14px;--formfieldborderwidth:2px;--formfieldborderradius:2px;--height:40px;--padding:0 10px;--margin:0}.builder-item--footer-menu{--spacing:10px;--height:25px;--padding:0;--margin:0;--fontsize:12px;--lineheight:1.6em;--letterspacing:0px;--iconsize:12px;--textalign:left;--justify:flex-start}}:root{--nv-primary-accent:#2f5aae;--nv-secondary-accent:#2f5aae;--nv-site-bg:#ffffff;--nv-light-bg:#f4f5f7;--nv-dark-bg:#121212;--nv-text-color:#272626;--nv-text-dark-bg:#ffffff;--nv-c-1:#9463ae;--nv-c-2:#be574b;--nv-fallback-ff:Arial,Helvetica,sans-serif}:root{--e-global-color-nvprimaryaccent:#2f5aae;--e-global-color-nvsecondaryaccent:#2f5aae;--e-global-color-nvsitebg:#ffffff;--e-global-color-nvlightbg:#f4f5f7;--e-global-color-nvdarkbg:#121212;--e-global-color-nvtextcolor:#272626;--e-global-color-nvtextdarkbg:#ffffff;--e-global-color-nvc1:#9463ae;--e-global-color-nvc2:#be574b}img#wpstats{display:none}.is-menu-sidebar .header-menu-sidebar{visibility:visible}.is-menu-sidebar.menu_sidebar_slide_left .header-menu-sidebar{transform:translate3d(0,0,0);left:0}.is-menu-sidebar.menu_sidebar_slide_right .header-menu-sidebar{transform:translate3d(0,0,0);right:0}.is-menu-sidebar.menu_sidebar_pull_left .header-menu-sidebar,.is-menu-sidebar.menu_sidebar_pull_right .header-menu-sidebar{transform:translateX(0)}.is-menu-sidebar.menu_sidebar_dropdown .header-menu-sidebar{height:auto}.is-menu-sidebar.menu_sidebar_dropdown .header-menu-sidebar-inner{max-height:400px;padding:20px 0}.is-menu-sidebar.menu_sidebar_full_canvas .header-menu-sidebar{opacity:1}.header-menu-sidebar .menu-item-nav-search:not(.floating){pointer-events:none}.header-menu-sidebar .menu-item-nav-search .is-menu-sidebar &{pointer-events:unset}.nav-ul li:focus-within .wrap.active+.sub-menu{opacity:1;visibility:visible}.nav-ul li>.wrap{display:flex;align-items:center;position:relative;padding:0 4px}.nav-ul:not(.menu-mobile):not(.neve-mega-menu)>li>.wrap>a{padding-top:1px}.header-menu-sidebar .nav-ul li .wrap{padding:0 4px}.header-menu-sidebar .nav-ul li .wrap a{flex-grow:1;display:flex}.header-menu-sidebar .nav-ul li .wrap a .dd-title{width:var(--wrapdropdownwidth)}.header-menu-sidebar .nav-ul li .wrap button{border:0;z-index:1;background:0}.header-menu-sidebar .nav-ul li:not([class*=block]):not(.menu-item-has-children)>.wrap>a{padding-right:calc(1em + (18px*2));text-wrap:wrap;white-space:normal}.header-menu-sidebar .nav-ul li.menu-item-has-children:not([class*=block])>.wrap>a{margin-right:calc(-1em - (18px*2))}.widget_search .search-form .search-field,.widget_search .search-form .search-submit{height:auto}</style>
+<meta name="description" content="Neste artigo, vamos explorar quantos livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica. Vamos mergulhar nessa jornada de conhecime..." />
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+<link rel="canonical" href="https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Quantos Livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica? |" />
+<meta property="og:description" content="Neste artigo, vamos explorar quantos livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica. Vamos mergulhar nessa jornada de conhecimento.." />
+<meta property="og:url" content="https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/" />
+<meta property="og:site_name" content="Patricia Alves" />
+<meta property="article:section" content="Estudo bíblico" />
+<meta property="og:updated_time" content="2024-02-01T15:35:59+00:00" />
+<meta property="og:image" content="https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia.png" />
+<meta property="og:image:secure_url" content="https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia.png" />
+<meta property="og:image:width" content="1456" />
+<meta property="og:image:height" content="816" />
+<meta property="og:image:alt" content="Quantos Livros tem a Bíblia" />
+<meta property="og:image:type" content="image/png" />
+<meta property="article:published_time" content="2023-07-14T11:42:09+00:00" />
+<meta property="article:modified_time" content="2024-02-01T15:35:59+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Quantos Livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica? |" />
+<meta name="twitter:description" content="Neste artigo, vamos explorar quantos livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica. Vamos mergulhar nessa jornada de conhecimento.." />
+<meta name="twitter:image" content="https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia.png" />
+<meta name="twitter:label1" content="Escrito por" />
+<meta name="twitter:data1" content="Robson Alves" />
+<meta name="twitter:label2" content="Tempo para leitura" />
+<meta name="twitter:data2" content="9 minutos" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://patriciaalves.com.br/#person","name":"Patr\u00edcia Alves","logo":{"@type":"ImageObject","@id":"https://patriciaalves.com.br/#logo","url":"https://patriciaalves.com.br/wp-content/uploads/2019/10/Logo-1.png","contentUrl":"https://patriciaalves.com.br/wp-content/uploads/2019/10/Logo-1.png","caption":"Patricia Alves","inLanguage":"pt-BR","width":"1920","height":"1080"},"image":{"@type":"ImageObject","@id":"https://patriciaalves.com.br/#logo","url":"https://patriciaalves.com.br/wp-content/uploads/2019/10/Logo-1.png","contentUrl":"https://patriciaalves.com.br/wp-content/uploads/2019/10/Logo-1.png","caption":"Patricia Alves","inLanguage":"pt-BR","width":"1920","height":"1080"}},{"@type":"WebSite","@id":"https://patriciaalves.com.br/#website","url":"https://patriciaalves.com.br","name":"Patricia Alves","alternateName":"Patr\u00edcia Alves","publisher":{"@id":"https://patriciaalves.com.br/#person"},"inLanguage":"pt-BR"},{"@type":"ImageObject","@id":"https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia.png","url":"https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia.png","width":"1456","height":"816","caption":"Quantos Livros tem a Bi\u0301blia","inLanguage":"pt-BR"},{"@type":"WebPage","@id":"https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/#webpage","url":"https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/","name":"Quantos Livros tem a B\u00edblia Evang\u00e9lica, Cat\u00f3lica, Ortodoxa e Judaica? |","datePublished":"2023-07-14T11:42:09+00:00","dateModified":"2024-02-01T15:35:59+00:00","isPartOf":{"@id":"https://patriciaalves.com.br/#website"},"primaryImageOfPage":{"@id":"https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia.png"},"inLanguage":"pt-BR"},{"@type":"Person","@id":"https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/#author","name":"Robson Alves","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/07b33bf46248a2f29ce0a22e7c0a9b08?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/07b33bf46248a2f29ce0a22e7c0a9b08?s=96&amp;d=mm&amp;r=g","caption":"Robson Alves","inLanguage":"pt-BR"}},{"@type":"BlogPosting","headline":"Quantos Livros tem a B\u00edblia Evang\u00e9lica, Cat\u00f3lica, Ortodoxa e Judaica? |","keywords":"quantos livros tem a b\u00edblia","datePublished":"2023-07-14T11:42:09+00:00","dateModified":"2024-02-01T15:35:59+00:00","articleSection":"Estudo b\u00edblico","author":{"@id":"https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/#author","name":"Robson Alves"},"publisher":{"@id":"https://patriciaalves.com.br/#person"},"description":"Neste artigo, vamos explorar quantos livros tem a B\u00edblia Evang\u00e9lica, Cat\u00f3lica, Ortodoxa e Judaica. Vamos mergulhar nessa jornada de conhecime...","name":"Quantos Livros tem a B\u00edblia Evang\u00e9lica, Cat\u00f3lica, Ortodoxa e Judaica? |","@id":"https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/#richSnippet","isPartOf":{"@id":"https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/#webpage"},"image":{"@id":"https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia.png"},"inLanguage":"pt-BR","mainEntityOfPage":{"@id":"https://patriciaalves.com.br/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica/#webpage"}}]}</script>
+
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//stats.wp.com" />
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+<link rel="dns-prefetch" href="//fundingchoicesmessages.google.com" />
+<link rel="alternate" type="application/rss+xml" title="Feed para  &raquo;" href="https://patriciaalves.com.br/feed/" />
+
+<script type="rocketlazyloadscript" data-rocket-src="//www.googletagmanager.com/gtag/js?id=G-25K1SB6QYR" data-cfasync="false" data-wpfc-render="false" async></script>
+<script type="rocketlazyloadscript" data-cfasync="false" data-wpfc-render="false">
+				var mi_version = '8.25.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/patriciaalves.com.br\/quantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-25K1SB6QYR',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-25K1SB6QYR', {"forceSSL":"true"} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+
+<style id="wp-emoji-styles-inline-css"></style>
+<style id="wp-block-library-inline-css"></style>
+<style id="jetpack-sharing-buttons-style-inline-css"></style>
+<style id="rank-math-toc-block-style-inline-css"></style>
+<style id="classic-theme-styles-inline-css"></style>
+<style id="global-styles-inline-css"></style>
+<style id="neve-style-inline-css"></style>
+<style id="rocket-lazyload-inline-css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://patriciaalves.com.br/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" async="async" data-rocket-src="https://patriciaalves.com.br/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.25.0" id="monsterinsights-frontend-script-js"></script>
+<script data-cfasync="false" data-wpfc-render="false" id="monsterinsights-frontend-script-js-extra">var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"","inbound_paths":"[]","home_url":"https:\/\/patriciaalves.com.br","hash_tracking":"false","v4_id":"G-25K1SB6QYR"};</script>
+
+<script type="rocketlazyloadscript" async="async" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=GT-NCG9S29B" id="google_gtagjs-js" async></script>
+<script type="rocketlazyloadscript" id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["patriciaalves.com.br"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-NCG9S29B");
+</script>
+
+<link rel="https://api.w.org/" href="https://patriciaalves.com.br/wp-json/" /><link rel="alternate" type="application/json" href="https://patriciaalves.com.br/wp-json/wp/v2/posts/3595" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://patriciaalves.com.br/xmlrpc.php?rsd" />
+<link rel="shortlink" href="https://patriciaalves.com.br/?p=3595" />
+<link rel="alternate" type="application/json+oembed" href="https://patriciaalves.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpatriciaalves.com.br%2Fquantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://patriciaalves.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpatriciaalves.com.br%2Fquantos-livros-tem-a-biblia-evangelica-catolica-ortodoxa-e-judaica%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.122.0" /><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//patriciaalves.com.br/?wordfence_lh=1&hid=BF626BB1F14AD1843625C8D2B875206A');
+</script> <style></style>
+
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+
+<meta name="generator" content="Elementor 3.20.2; features: e_optimized_assets_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-auto">
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2864495022954910&amp;host=ca-host-pub-2644536267352236" crossorigin="anonymous"></script>
+
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://fundingchoicesmessages.google.com/i/pub-2864495022954910?ers=1" nonce="vS4YH0shhs-UokmZKTcXIQ"></script><script type="rocketlazyloadscript" nonce="vS4YH0shhs-UokmZKTcXIQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+<script type="rocketlazyloadscript">(function(){'use strict';function aa(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}var ba="function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ea(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var fa=ea(this);function ha(a,b){if(b)a:{var c=fa;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&null!=b&&ba(c,a,{configurable:!0,writable:!0,value:b})}}
+var ia="function"==typeof Object.create?Object.create:function(a){function b(){}b.prototype=a;return new b},l;if("function"==typeof Object.setPrototypeOf)l=Object.setPrototypeOf;else{var m;a:{var ja={a:!0},ka={};try{ka.__proto__=ja;m=ka.a;break a}catch(a){}m=!1}l=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var la=l;
+function n(a,b){a.prototype=ia(b.prototype);a.prototype.constructor=a;if(la)la(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.A=b.prototype}function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}
+var na="function"==typeof Object.assign?Object.assign:function(a,b){for(var c=1;c<arguments.length;c++){var d=arguments[c];if(d)for(var e in d)Object.prototype.hasOwnProperty.call(d,e)&&(a[e]=d[e])}return a};ha("Object.assign",function(a){return a||na});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var p=this||self;function q(a){return a};var t,u;a:{for(var oa=["CLOSURE_FLAGS"],v=p,x=0;x<oa.length;x++)if(v=v[oa[x]],null==v){u=null;break a}u=v}var pa=u&&u[610401301];t=null!=pa?pa:!1;var z,qa=p.navigator;z=qa?qa.userAgentData||null:null;function A(a){return t?z?z.brands.some(function(b){return(b=b.brand)&&-1!=b.indexOf(a)}):!1:!1}function B(a){var b;a:{if(b=p.navigator)if(b=b.userAgent)break a;b=""}return-1!=b.indexOf(a)};function C(){return t?!!z&&0<z.brands.length:!1}function D(){return C()?A("Chromium"):(B("Chrome")||B("CriOS"))&&!(C()?0:B("Edge"))||B("Silk")};var ra=C()?!1:B("Trident")||B("MSIE");!B("Android")||D();D();B("Safari")&&(D()||(C()?0:B("Coast"))||(C()?0:B("Opera"))||(C()?0:B("Edge"))||(C()?A("Microsoft Edge"):B("Edg/"))||C()&&A("Opera"));var sa={},E=null;var ta="undefined"!==typeof Uint8Array,ua=!ra&&"function"===typeof btoa;var F="function"===typeof Symbol&&"symbol"===typeof Symbol()?Symbol():void 0,G=F?function(a,b){a[F]|=b}:function(a,b){void 0!==a.g?a.g|=b:Object.defineProperties(a,{g:{value:b,configurable:!0,writable:!0,enumerable:!1}})};function va(a){var b=H(a);1!==(b&1)&&(Object.isFrozen(a)&&(a=Array.prototype.slice.call(a)),I(a,b|1))}
+var H=F?function(a){return a[F]|0}:function(a){return a.g|0},J=F?function(a){return a[F]}:function(a){return a.g},I=F?function(a,b){a[F]=b}:function(a,b){void 0!==a.g?a.g=b:Object.defineProperties(a,{g:{value:b,configurable:!0,writable:!0,enumerable:!1}})};function wa(){var a=[];G(a,1);return a}function xa(a,b){I(b,(a|0)&-99)}function K(a,b){I(b,(a|34)&-73)}function L(a){a=a>>11&1023;return 0===a?536870912:a};var M={};function N(a){return null!==a&&"object"===typeof a&&!Array.isArray(a)&&a.constructor===Object}var O,ya=[];I(ya,39);O=Object.freeze(ya);var P;function Q(a,b){P=b;a=new a(b);P=void 0;return a}
+function R(a,b,c){null==a&&(a=P);P=void 0;if(null==a){var d=96;c?(a=[c],d|=512):a=[];b&&(d=d&-2095105|(b&1023)<<11)}else{if(!Array.isArray(a))throw Error();d=H(a);if(d&64)return a;d|=64;if(c&&(d|=512,c!==a[0]))throw Error();a:{c=a;var e=c.length;if(e){var f=e-1,g=c[f];if(N(g)){d|=256;b=(d>>9&1)-1;e=f-b;1024<=e&&(za(c,b,g),e=1023);d=d&-2095105|(e&1023)<<11;break a}}b&&(g=(d>>9&1)-1,b=Math.max(b,e-g),1024<b&&(za(c,g,{}),d|=256,b=1023),d=d&-2095105|(b&1023)<<11)}}I(a,d);return a}
+function za(a,b,c){for(var d=1023+b,e=a.length,f=d;f<e;f++){var g=a[f];null!=g&&g!==c&&(c[f-b]=g)}a.length=d+1;a[d]=c};function Aa(a){switch(typeof a){case "number":return isFinite(a)?a:String(a);case "boolean":return a?1:0;case "object":if(a&&!Array.isArray(a)&&ta&&null!=a&&a instanceof Uint8Array){if(ua){for(var b="",c=0,d=a.length-10240;c<d;)b+=String.fromCharCode.apply(null,a.subarray(c,c+=10240));b+=String.fromCharCode.apply(null,c?a.subarray(c):a);a=btoa(b)}else{void 0===b&&(b=0);if(!E){E={};c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split("");d=["+/=","+/","-_=","-_.","-_"];for(var e=
+0;5>e;e++){var f=c.concat(d[e].split(""));sa[e]=f;for(var g=0;g<f.length;g++){var h=f[g];void 0===E[h]&&(E[h]=g)}}}b=sa[b];c=Array(Math.floor(a.length/3));d=b[64]||"";for(e=f=0;f<a.length-2;f+=3){var k=a[f],w=a[f+1];h=a[f+2];g=b[k>>2];k=b[(k&3)<<4|w>>4];w=b[(w&15)<<2|h>>6];h=b[h&63];c[e++]=g+k+w+h}g=0;h=d;switch(a.length-f){case 2:g=a[f+1],h=b[(g&15)<<2]||d;case 1:a=a[f],c[e]=b[a>>2]+b[(a&3)<<4|g>>4]+h+d}a=c.join("")}return a}}return a};function Ba(a,b,c){a=Array.prototype.slice.call(a);var d=a.length,e=b&256?a[d-1]:void 0;d+=e?-1:0;for(b=b&512?1:0;b<d;b++)a[b]=c(a[b]);if(e){b=a[b]={};for(var f in e)Object.prototype.hasOwnProperty.call(e,f)&&(b[f]=c(e[f]))}return a}function Da(a,b,c,d,e,f){if(null!=a){if(Array.isArray(a))a=e&&0==a.length&&H(a)&1?void 0:f&&H(a)&2?a:Ea(a,b,c,void 0!==d,e,f);else if(N(a)){var g={},h;for(h in a)Object.prototype.hasOwnProperty.call(a,h)&&(g[h]=Da(a[h],b,c,d,e,f));a=g}else a=b(a,d);return a}}
+function Ea(a,b,c,d,e,f){var g=d||c?H(a):0;d=d?!!(g&32):void 0;a=Array.prototype.slice.call(a);for(var h=0;h<a.length;h++)a[h]=Da(a[h],b,c,d,e,f);c&&c(g,a);return a}function Fa(a){return a.s===M?a.toJSON():Aa(a)};function Ga(a,b,c){c=void 0===c?K:c;if(null!=a){if(ta&&a instanceof Uint8Array)return b?a:new Uint8Array(a);if(Array.isArray(a)){var d=H(a);if(d&2)return a;if(b&&!(d&64)&&(d&32||0===d))return I(a,d|34),a;a=Ea(a,Ga,d&4?K:c,!0,!1,!0);b=H(a);b&4&&b&2&&Object.freeze(a);return a}a.s===M&&(b=a.h,c=J(b),a=c&2?a:Q(a.constructor,Ha(b,c,!0)));return a}}function Ha(a,b,c){var d=c||b&2?K:xa,e=!!(b&32);a=Ba(a,b,function(f){return Ga(f,e,d)});G(a,32|(c?2:0));return a};function Ia(a,b){a=a.h;return Ja(a,J(a),b)}function Ja(a,b,c,d){if(-1===c)return null;if(c>=L(b)){if(b&256)return a[a.length-1][c]}else{var e=a.length;if(d&&b&256&&(d=a[e-1][c],null!=d))return d;b=c+((b>>9&1)-1);if(b<e)return a[b]}}function Ka(a,b,c,d,e){var f=L(b);if(c>=f||e){e=b;if(b&256)f=a[a.length-1];else{if(null==d)return;f=a[f+((b>>9&1)-1)]={};e|=256}f[c]=d;e&=-1025;e!==b&&I(a,e)}else a[c+((b>>9&1)-1)]=d,b&256&&(d=a[a.length-1],c in d&&delete d[c]),b&1024&&I(a,b&-1025)}
+function La(a,b){var c=Ma;var d=void 0===d?!1:d;var e=a.h;var f=J(e),g=Ja(e,f,b,d);var h=!1;if(null==g||"object"!==typeof g||(h=Array.isArray(g))||g.s!==M)if(h){var k=h=H(g);0===k&&(k|=f&32);k|=f&2;k!==h&&I(g,k);c=new c(g)}else c=void 0;else c=g;c!==g&&null!=c&&Ka(e,f,b,c,d);e=c;if(null==e)return e;a=a.h;f=J(a);f&2||(g=e,c=g.h,h=J(c),g=h&2?Q(g.constructor,Ha(c,h,!1)):g,g!==e&&(e=g,Ka(a,f,b,e,d)));return e}function Na(a,b){a=Ia(a,b);return null==a||"string"===typeof a?a:void 0}
+function Oa(a,b){a=Ia(a,b);return null!=a?a:0}function S(a,b){a=Na(a,b);return null!=a?a:""};function T(a,b,c){this.h=R(a,b,c)}T.prototype.toJSON=function(){var a=Ea(this.h,Fa,void 0,void 0,!1,!1);return Pa(this,a,!0)};T.prototype.s=M;T.prototype.toString=function(){return Pa(this,this.h,!1).toString()};
+function Pa(a,b,c){var d=a.constructor.v,e=L(J(c?a.h:b)),f=!1;if(d){if(!c){b=Array.prototype.slice.call(b);var g;if(b.length&&N(g=b[b.length-1]))for(f=0;f<d.length;f++)if(d[f]>=e){Object.assign(b[b.length-1]={},g);break}f=!0}e=b;c=!c;g=J(a.h);a=L(g);g=(g>>9&1)-1;for(var h,k,w=0;w<d.length;w++)if(k=d[w],k<a){k+=g;var r=e[k];null==r?e[k]=c?O:wa():c&&r!==O&&va(r)}else h||(r=void 0,e.length&&N(r=e[e.length-1])?h=r:e.push(h={})),r=h[k],null==h[k]?h[k]=c?O:wa():c&&r!==O&&va(r)}d=b.length;if(!d)return b;
+var Ca;if(N(h=b[d-1])){a:{var y=h;e={};c=!1;for(var ca in y)Object.prototype.hasOwnProperty.call(y,ca)&&(a=y[ca],Array.isArray(a)&&a!=a&&(c=!0),null!=a?e[ca]=a:c=!0);if(c){for(var rb in e){y=e;break a}y=null}}y!=h&&(Ca=!0);d--}for(;0<d;d--){h=b[d-1];if(null!=h)break;var cb=!0}if(!Ca&&!cb)return b;var da;f?da=b:da=Array.prototype.slice.call(b,0,d);b=da;f&&(b.length=d);y&&b.push(y);return b};function Qa(a){return function(b){if(null==b||""==b)b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error(void 0);G(b,32);b=Q(a,b)}return b}};function Ra(a){this.h=R(a)}n(Ra,T);var Sa=Qa(Ra);var U;function V(a){this.g=a}V.prototype.toString=function(){return this.g+""};var Ta={};function Ua(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};function Va(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)}function Wa(a){this.g=a||p.document||document}Wa.prototype.appendChild=function(a,b){a.appendChild(b)};/*
+
+ SPDX-License-Identifier: Apache-2.0
+*/
+function Xa(a,b){a.src=b instanceof V&&b.constructor===V?b.g:"type_error:TrustedResourceUrl";var c,d;(c=(b=null==(d=(c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document).querySelector)?void 0:d.call(c,"script[nonce]"))?b.nonce||b.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",c)};function Ya(a){a=void 0===a?document:a;return a.createElement("script")};function Za(a,b,c,d,e,f){try{var g=a.g,h=Ya(g);h.async=!0;Xa(h,b);g.head.appendChild(h);h.addEventListener("load",function(){e();d&&g.head.removeChild(h)});h.addEventListener("error",function(){0<c?Za(a,b,c-1,d,e,f):(d&&g.head.removeChild(h),f())})}catch(k){f()}};var $a=p.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ab=p.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),bb=p.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function db(a,b,c){this.i=a;this.l=new Wa(this.i);this.g=null;this.j=[];this.m=!1;this.u=b;this.o=c}
+function eb(a){if(a.i.body&&!a.m){var b=function(){fb(a);p.setTimeout(function(){return gb(a,3)},50)};Za(a.l,a.u,2,!0,function(){p[a.o]||b()},b);a.m=!0}}
+function fb(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.i.body.appendChild(d);a.j.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=hb(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=hb(0,10,0,10,0,10);b.style.display="flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,
+85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Va(a.l.g,"IMG");d.className=Ua();d.src=$a;d.alt="Warning icon";d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ab;var g=X(a);g.textContent=bb;Y(a,e,f);Y(a,e,g);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.i.body.appendChild(a.g);b=W(1,5);for(c=
+0;c<b;c++)d=X(a),a.i.body.appendChild(d),a.j.push(d)}function Y(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function hb(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,255)).toString()+")"}function X(a){a=Va(a.l.g,"DIV");a.className=Ua();return a}
+function gb(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(ib(a),fb(a),p.setTimeout(function(){return gb(a,b-1)},50))}
+function ib(a){var b=a.j;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];if(c)b=c.call(b);else if("number"==typeof b.length)b={next:aa(b)};else throw Error(String(b)+" is not an iterable or ArrayLike");for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.j=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function jb(a,b,c,d,e){function f(k){document.body?g(document.body):0<k?p.setTimeout(function(){f(k-1)},e):b()}function g(k){k.appendChild(h);p.setTimeout(function(){h?(0!==h.offsetHeight&&0!==h.offsetWidth?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},d)}var h=kb(c);f(3)}function kb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Ma(a){this.h=R(a)}n(Ma,T);function lb(a){this.h=R(a)}n(lb,T);var mb=Qa(lb);function nb(a){a=Na(a,4)||"";if(void 0===U){var b=null;var c=p.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:q,createScript:q,createScriptURL:q})}catch(d){p.console&&p.console.error(d.message)}U=b}else U=b}a=(b=U)?b.createScriptURL(a):a;return new V(a,Ta)};function ob(a,b){this.m=a;this.o=new Wa(a.document);this.g=b;this.j=S(this.g,1);this.u=nb(La(this.g,2));this.i=!1;b=nb(La(this.g,13));this.l=new db(a.document,b,S(this.g,12))}ob.prototype.start=function(){pb(this)};
+function pb(a){qb(a);Za(a.o,a.u,3,!1,function(){a:{var b=a.j;var c=p.btoa(b);if(c=p[c]){try{var d=Sa(p.atob(c))}catch(e){b=!1;break a}b=b===Na(d,1)}else b=!1}b?Z(a,S(a.g,14)):(Z(a,S(a.g,8)),eb(a.l))},function(){jb(function(){Z(a,S(a.g,7));eb(a.l)},function(){return Z(a,S(a.g,6))},S(a.g,9),Oa(a.g,10),Oa(a.g,11))})}function Z(a,b){a.i||(a.i=!0,a=new a.m.XMLHttpRequest,a.open("GET",b,!0),a.send())}function qb(a){var b=p.btoa(a.j);a.m[b]&&Z(a,S(a.g,5))};(function(a,b){p[a]=function(){var c=ma.apply(0,arguments);p[a]=function(){};b.apply(null,c)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ob(window,mb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItMjg2NDQ5NTAyMjk1NDkxMCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi0yODY0NDk1MDIyOTU0OTEwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hYVEZYWmNMcUZiLWRMRWZmWHREZHNuV095VTB2ZGNyLTljS2VWRzhqZWhLQ09OdEw1ZXdJeEdzU20xNzN5MzYwRkFCUXh4QU5JVnhpRnNyNHllNGd0SGZ3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdfeWlBWFJ1NlZhS3hCTVBJa2hFU1l1VjBxb3lTRzFCcjgzVTNNRV81b1dYTXNkUXRXTVlVQWxXZlRZc1YxNW53SDhrQV8xOGxJSnN5dDVsUUM3NnpxR2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFU5czJuQy0xU1FvOTFiYzVTQVpqVFRkYXVJOEQ2Y0hjbXNaWW1MUmtyM1BFcmNHajFFUTNCV1U4bl84d0RqX0VOb3MzZWNPQi1KMlRXbVhzVHRtS1gwQXdcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFZkTGM1X252V0FEMjZ2RzNQVW9HRW5WWGZPVkhLWE5vNVFZa3VTUHIzWV9XU0RoZkczLVR1TGlxaVotcktVaUZnMy1iS2ZtdWlWOGpVUGFySjFqYmU5TVFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUSTROalEwT1RVd01qSTVOVFE1TVRBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi0yODY0NDk1MDIyOTU0OTEwLmpzP3VzcXBcdTAwM2RDQUUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4VzFDSl9tYmJoWW5uZUtnUnphY2RvRWttbVFhLU9LYk5DdVpmd2NUYXAyS2Z1SDQ1WW51VThvcE0zeks1NXpGMFJDVHJqbFJiR0NCSkRqWG4wam94cXc0UVx1MDAzZFx1MDAzZCJd");</script>
+
+
+<script type="rocketlazyloadscript">
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-MRHMKRM8' );
+			
+</script>
+
+<link rel="icon" href="https://patriciaalves.com.br/wp-content/uploads/2019/10/cropped-PA-2-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://patriciaalves.com.br/wp-content/uploads/2019/10/cropped-PA-2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://patriciaalves.com.br/wp-content/uploads/2019/10/cropped-PA-2-180x180.png" />
+<meta name="msapplication-TileImage" content="https://patriciaalves.com.br/wp-content/uploads/2019/10/cropped-PA-2-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><style id="wpforms-css-vars-root"></style>
+</head>
+<body class="post-template-default single single-post postid-3595 single-format-standard wp-custom-logo  nv-blog-default nv-sidebar-right menu_sidebar_slide_left elementor-default elementor-kit-294" id="neve_body">
+
+<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRHMKRM8" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+
+<div class="wrapper">
+<header class="header">
+<a class="neve-skip-link show-on-focus" href="#content">
+Pular para o conteúdo </a>
+<div id="header-grid" class="hfg_header site-header">
+<nav class="header--row header-main hide-on-mobile hide-on-tablet layout-full-contained nv-navbar header--row" data-row-id="main" data-show-on="desktop">
+<div class="header--row-inner header-main-inner">
+<div class="container">
+<div class="row row--wrapper" data-section="hfg_header_layout_main">
+<div class="hfg-slot left"><div class="builder-item desktop-right"><div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
+<div class="site-logo">
+<a class="brand" href="https://patriciaalves.com.br/" title="← " aria-label="Conselhos de casamento" rel="home"><img fetchpriority="high" width="2044" height="1055" src="https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado.png" class="neve-site-logo skip-lazy" alt data-variant="logo" decoding="async" srcset="https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado.png 2044w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-300x155.png 300w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-1024x529.png 1024w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-768x396.png 768w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-1536x793.png 1536w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-700x361.png 700w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-104x54.png 104w" sizes="(max-width: 2044px) 100vw, 2044px" /></a></div>
+</div>
+</div><div class="builder-item has-nav"><div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary" data-item-id="primary-menu">
+<div class="nv-nav-wrap">
+<div role="navigation" class="nav-menu-primary style-border-bottom m-style" aria-label="Menu primário">
+<ul id="nv-primary-navigation-main" class="primary-menu-ul nav-ul menu-desktop"><li id="menu-item-3143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-3143"><div class="wrap"><a href="https://patriciaalves.com.br/">Início</a></div></li>
+<li id="menu-item-3931" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-3931"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/"><span class="menu-item-title-wrap dd-title">Estudo bíblico</span></a><div role="button" aria-pressed="false" aria-label="Open Submenu" tabindex="0" class="caret-wrap caret 2" style="margin-left:5px;"><span class="caret"><svg fill="currentColor" aria-label="Suspenso" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></div>
+<ul class="sub-menu">
+<li id="menu-item-4697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4697"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudos-por-capitulos/"><span class="menu-item-title-wrap dd-title">Estudos por capítulos</span></a><div role="button" aria-pressed="false" aria-label="Open Submenu" tabindex="0" class="caret-wrap caret 3" style="margin-left:5px;"><span class="caret"><svg fill="currentColor" aria-label="Suspenso" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></div>
+<ul class="sub-menu">
+<li id="menu-item-4184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4184"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/genesis/">Gênesis</a></div></li>
+<li id="menu-item-4185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4185"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/exodo/">Êxodo</a></div></li>
+<li id="menu-item-4186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4186"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/levitico/">Levítico</a></div></li>
+<li id="menu-item-4206" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4206"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/numeros/">Números</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-3933" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3933"><div class="wrap"><a href="https://patriciaalves.com.br/category/relacionamentos/">Relacionamentos</a></div></li>
+<li id="menu-item-3932" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3932"><div class="wrap"><a href="https://patriciaalves.com.br/category/desenvolvimento-pessoal/">Desenvolvimento pessoal</a></div></li>
+<li id="menu-item-3158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3158"><div class="wrap"><a href="https://patriciaalves.com.br/quem-e-patricia-alves/">Quem sou</a></div></li>
+</ul> </div>
+</div>
+</div>
+</div></div><div class="hfg-slot right"><div class="builder-item desktop-left"><div class="item--inner builder-item--header_search" data-section="header_search" data-item-id="header_search">
+<div class="component-wrap search-field">
+<div class="widget widget-search" style="padding: 0;margin: 8px 2px;">
+<form role="search" method="get" class="search-form" action="https://patriciaalves.com.br/">
+<label>
+<span class="screen-reader-text">Pesquisar por...</span>
+</label>
+<input type="search" class="search-field" aria-label="Busca" placeholder="Pesquisar por..." value name="s" />
+<button type="submit" class="search-submit nv-submit" aria-label="Busca">
+<span class="nv-search-icon-wrap">
+<span class="nv-icon nv-search">
+<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" /></svg>
+</span> </span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div></div> </div>
+</div>
+</div>
+</nav>
+<nav class="header--row header-main hide-on-desktop layout-full-contained nv-navbar header--row" data-row-id="main" data-show-on="mobile">
+<div class="header--row-inner header-main-inner">
+<div class="container">
+<div class="row row--wrapper" data-section="hfg_header_layout_main">
+<div class="hfg-slot left"><div class="builder-item mobile-right tablet-right"><div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
+<div class="site-logo">
+<a class="brand" href="https://patriciaalves.com.br/" title="← " aria-label="Conselhos de casamento" rel="home"><img fetchpriority="high" width="2044" height="1055" src="https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado.png" class="neve-site-logo skip-lazy" alt data-variant="logo" decoding="async" srcset="https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado.png 2044w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-300x155.png 300w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-1024x529.png 1024w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-768x396.png 768w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-1536x793.png 1536w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-700x361.png 700w, https://patriciaalves.com.br/wp-content/uploads/2023/04/cropped-pa-dourado-104x54.png 104w" sizes="(max-width: 2044px) 100vw, 2044px" /></a></div>
+</div>
+</div><div class="builder-item tablet-left mobile-left"><div class="item--inner builder-item--nav-icon" data-section="header_menu_icon" data-item-id="nav-icon">
+<div class="menu-mobile-toggle item-button navbar-toggle-wrapper">
+<button type="button" class=" navbar-toggle" value="Menu de navegação" aria-label="Menu de navegação " aria-expanded="false" onclick="if('undefined' !== typeof toggleAriaClick ) { toggleAriaClick() }">
+<span class="bars">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</span>
+<span class="screen-reader-text">Menu de navegação</span>
+</button>
+</div> 
+</div>
+</div></div><div class="hfg-slot right"><div class="builder-item tablet-left mobile-left"><div class="item--inner builder-item--header_search_responsive" data-section="header_search_responsive" data-item-id="header_search_responsive">
+<div class="nv-search-icon-component">
+<div class="menu-item-nav-search canvas">
+<a aria-label="Busca" href="#" class="nv-icon nv-search">
+<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" /></svg>
+</a> <div class="nv-nav-search" aria-label="search">
+<div class="form-wrap container responsive-search">
+<form role="search" method="get" class="search-form" action="https://patriciaalves.com.br/">
+<label>
+<span class="screen-reader-text">Pesquisar por...</span>
+</label>
+<input type="search" class="search-field" aria-label="Busca" placeholder="Pesquisar por..." value name="s" />
+<button type="submit" class="search-submit nv-submit" aria-label="Busca">
+<span class="nv-search-icon-wrap">
+<span class="nv-icon nv-search">
+<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" /></svg>
+</span> </span>
+</button>
+</form>
+</div>
+<div class="close-container container responsive-search">
+<button class="close-responsive-search" aria-label="Fechar">
+<svg width="50" height="50" viewBox="0 0 20 20" fill="#555555"><path d="M14.95 6.46L11.41 10l3.54 3.54l-1.41 1.41L10 11.42l-3.53 3.53l-1.42-1.42L8.58 10L5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z" /></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div> </div>
+</div>
+</div>
+</nav>
+<div id="header-menu-sidebar" class="header-menu-sidebar tcb menu-sidebar-panel slide_left hfg-pe" data-row-id="sidebar">
+<div id="header-menu-sidebar-bg" class="header-menu-sidebar-bg">
+<div class="close-sidebar-panel navbar-toggle-wrapper">
+<button type="button" class="hamburger is-active  navbar-toggle active" value="Menu de navegação" aria-label="Menu de navegação " aria-expanded="false" onclick="if('undefined' !== typeof toggleAriaClick ) { toggleAriaClick() }">
+<span class="bars">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</span>
+<span class="screen-reader-text">
+Menu de navegação </span>
+</button>
+</div>
+<div id="header-menu-sidebar-inner" class="header-menu-sidebar-inner tcb ">
+<div class="builder-item has-nav"><div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary" data-item-id="primary-menu">
+<div class="nv-nav-wrap">
+<div role="navigation" class="nav-menu-primary style-border-bottom m-style" aria-label="Menu primário">
+<ul id="nv-primary-navigation-sidebar" class="primary-menu-ul nav-ul menu-mobile"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-3143"><div class="wrap"><a href="https://patriciaalves.com.br/">Início</a></div></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-3931"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/"><span class="menu-item-title-wrap dd-title">Estudo bíblico</span></a><button tabindex="0" type="button" class="caret-wrap navbar-toggle 2 " style="margin-left:5px;" aria-label="Toggle Estudo bíblico"><span class="caret"><svg fill="currentColor" aria-label="Suspenso" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></button></div>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4697"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudos-por-capitulos/"><span class="menu-item-title-wrap dd-title">Estudos por capítulos</span></a><button tabindex="0" type="button" class="caret-wrap navbar-toggle 3 " style="margin-left:5px;" aria-label="Toggle Estudos por capítulos"><span class="caret"><svg fill="currentColor" aria-label="Suspenso" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></button></div>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4184"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/genesis/">Gênesis</a></div></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4185"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/exodo/">Êxodo</a></div></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4186"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/levitico/">Levítico</a></div></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4206"><div class="wrap"><a href="https://patriciaalves.com.br/category/estudo-biblico/numeros/">Números</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3933"><div class="wrap"><a href="https://patriciaalves.com.br/category/relacionamentos/">Relacionamentos</a></div></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3932"><div class="wrap"><a href="https://patriciaalves.com.br/category/desenvolvimento-pessoal/">Desenvolvimento pessoal</a></div></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3158"><div class="wrap"><a href="https://patriciaalves.com.br/quem-e-patricia-alves/">Quem sou</a></div></li>
+</ul> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="header-menu-sidebar-overlay hfg-ov hfg-pe" onclick="if('undefined' !== typeof toggleAriaClick ) { toggleAriaClick() }"></div>
+</div>
+</header>
+<style></style><style></style>
+<main id="content" class="neve-main">
+<div class="container single-post-container">
+<div class="row">
+<article id="post-3595" class="nv-single-post-wrap col post-3595 post type-post status-publish format-standard has-post-thumbnail hentry category-estudo-biblico">
+<div class="entry-header"><div class="nv-title-meta-wrap"><small class="neve-breadcrumbs-wrapper"></small><h1 class="title entry-title">Quantos Livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica?</h1><ul class="nv-meta-list"><li class="meta author vcard "><span class="author-name fn">por <a href="https://patriciaalves.com.br/author/robson/" title="Posts de Robson Alves" rel="author">Robson Alves</a></span></li></ul></div></div><div class="nv-thumb-wrap"><img width="930" height="620" src="https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-930x620.png" class="skip-lazy wp-post-image" alt="Quantos Livros tem a Bíblia" decoding="async" /></div><div class="nv-content-wrap entry-content"><p>A Bíblia é um livro sagrado amplamente reconhecido e estudado por pessoas de várias religiões ao redor do mundo. Existem diferentes versões da Bíblia, cada uma com suas características específicas. Neste artigo, vamos explorar quantos livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica. Vamos mergulhar nessa jornada de conhecimento religioso e descobrir mais sobre essas importantes escrituras.</p>
+<h2>Quantos Livros tem a Bíblia Evangélica?</h2>
+<p>A Bíblia Evangélica é uma versão cristã das escrituras sagradas. Ela é composta por um conjunto específico de livros, que podem variar de acordo com a denominação ou tradução utilizada. Geralmente, a Bíblia Evangélica é composta por 66 livros, divididos em duas seções principais: Antigo Testamento e Novo Testamento.</p>
+<p><strong>Antigo Testamento</strong></p>
+<p>O Antigo Testamento da Bíblia Evangélica contém 39 livros. Esses livros abrangem uma ampla gama de gêneros literários, como história, poesia, profecia e sabedoria. Alguns dos livros mais conhecidos do Antigo Testamento incluem Gênesis, Êxodo, Salmos e Isaías.</p>
+<p><strong>Novo Testamento</strong></p>
+<p>O Novo Testamento da Bíblia Evangélica contém 27 livros. Esses livros são centrados na vida e nos ensinamentos de Jesus Cristo, além de abordarem a história da igreja primitiva e questões teológicas. Entre os livros mais conhecidos do Novo Testamento estão os quatro Evangelhos (Mateus, Marcos, Lucas e João), Atos dos Apóstolos e as epístolas de Paulo.</p>
+<h2>Quantos Livros tem a Bíblia Católica?</h2>
+<p>A Bíblia Católica é outra versão cristã das escrituras sagradas. Ela difere da Bíblia Evangélica em termos de conteúdo, especialmente no Antigo Testamento. A Bíblia Católica contém um conjunto adicional de livros conhecidos como Deuterocanônicos, que não são encontrados na Bíblia Evangélica.</p>
+<p><strong>Antigo Testamento</strong></p>
+<p>O Antigo Testamento da Bíblia Católica contém 46 livros. Além dos 39 livros presentes na Bíblia Evangélica, a Bíblia Católica inclui sete livros adicionais: Tobias, Judite, Sabedoria, Eclesiástico, Baruc, 1 Macabeus e 2 Macabeus. Além disso, também são incluídos trechos adicionais nos livros de Ester e Daniel.</p>
+<p><strong>Novo Testamento</strong></p>
+<p>O Novo Testamento da Bíblia Católica é o mesmo que o da Bíblia Evangélica, com 27 livros.</p>
+<p><strong>Quantos Livros tem a Bíblia Ortodoxa?</strong></p>
+<p>A Bíblia Ortodoxa é utilizada pelas igrejas ortodoxas orientais e possui algumas diferenças em relação à Bíblia Evangélica e à Bíblia Católica. Ela inclui livros adicionais tanto no Antigo Testamento quanto no Novo Testamento.</p>
+<p><strong>Antigo Testamento</strong></p>
+<p>A Bíblia Ortodoxa contém 51 livros em seu Antigo Testamento. Além dos 39 livros presentes na Bíblia Evangélica, ela inclui os sete livros deuterocanônicos também encontrados na Bíblia Católica. Além disso, a Bíblia Ortodoxa inclui ainda outros livros conhecidos como Pseudepígrafos, que não são aceitos como escrituras sagradas pelas igrejas ocidentais.</p>
+<p><strong>Novo Testamento</strong></p>
+<p>O Novo Testamento da Bíblia Ortodoxa é o mesmo que o da Bíblia Evangélica e da Bíblia Católica, contendo 27 livros.</p>
+<h3><img decoding="async" class="alignnone size-full wp-image-3618" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201456%20816'%3E%3C/svg%3E" alt="Quantos Livros tem a Bíblia" width="1456" height="816" data-lazy-srcset="https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1.png 1456w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1-300x168.png 300w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1-1024x574.png 1024w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1-768x430.png 768w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1-700x392.png 700w" data-lazy-sizes="(max-width: 1456px) 100vw, 1456px" data-lazy-src="https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1.png" /><noscript><img decoding="async" class="alignnone size-full wp-image-3618" src="https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1.png" alt="Quantos Livros tem a Bíblia" width="1456" height="816" srcset="https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1.png 1456w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1-300x168.png 300w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1-1024x574.png 1024w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1-768x430.png 768w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Quantos-Livros-tem-a-Biblia-1-700x392.png 700w" sizes="(max-width: 1456px) 100vw, 1456px" /></noscript></h3>
+<h3>Quantos Livros tem a Bíblia Judaica?</h3>
+<p>A Bíblia Judaica, também conhecida como Tanakh, é o livro sagrado do Judaísmo. Ela difere das versões cristãs da Bíblia, pois não inclui o Novo Testamento. O Tanakh é composto por três partes principais: Torá, Nevi&#8217;im e Ketuvim.</p>
+<p><strong>Torá</strong></p>
+<p>A Torá é a primeira parte do Tanakh e contém os cinco livros de Moisés: Gênesis, Êxodo, Levítico, Números e Deuteronômio. Esses livros são considerados os mais sagrados dentro do Judaísmo.</p>
+<p><strong>Nevi&#8217;im</strong></p>
+<p>A segunda parte do Tanakh é conhecida como Nevi&#8217;im e inclui os livros dos profetas, como Isaías, Jeremias, Ezequiel e os Doze Profetas Menores.</p>
+<p><strong>Ketuvim</strong></p>
+<p>A terceira parte do Tanakh é chamada de Ketuvim, que significa &#8220;Escritos&#8221;. Ela contém uma variedade de livros, incluindo Salmos, Provérbios, Jó, Cântico dos Cânticos, Rute, Lamentações, Ester, Daniel, Esdras, Neemias e Crônicas.</p>
+<div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654] sm:AIPRM__conversation__response">
+<div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+<div class="flex flex-grow flex-col gap-3">
+<div class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+<div class="markdown prose w-full break-words dark:prose-invert light AIPRM__conversation__response">
+<p><strong>Brit Hadasha*</strong></p>
+<p>A Brit Hadasha é composta por vários livros, incluindo os quatro Evangelhos (Mateus, Marcos, Lucas e João), que narram a vida de Jesus e seus ensinamentos; o Livro de Atos dos Apóstolos, que relata a história da igreja cristã primitiva; as Epístolas, que são cartas escritas por apóstolos e líderes cristãos para várias comunidades e indivíduos; e o Livro do Apocalipse, que contém visões proféticas sobre o fim dos tempos.</p>
+<p>Para os messiânicos, a Brit Hadasha é considerada uma parte essencial das Escrituras, junto com a Tanakh (o Antigo Testamento) da tradição judaica. Ela é vista como uma revelação divina e uma fonte de orientação espiritual e moral. Os ensinamentos e histórias presentes na Brit Hadasha são frequentemente estudados e interpretados por messiânicos em sua busca por compreender a fé e aplicar seus princípios em suas vidas diárias.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h5>FAQs (Perguntas Frequentes)</h5>
+<p><strong>A Bíblia Evangélica é a mesma para todas as denominações?</strong></p>
+<p>Não, a Bíblia Evangélica pode variar de acordo com a denominação e a tradução utilizada. Embora o número de livros seja geralmente o mesmo, existem diferentes traduções e versões que podem ter pequenas diferenças nos textos.</p>
+<p><strong>Por que a Bíblia Católica possui livros adicionais?</strong></p>
+<p>A Bíblia Católica inclui livros adicionais no Antigo Testamento, conhecidos como Deuterocanônicos, que não são encontrados na Bíblia Evangélica. Esses livros são considerados canônicos pela Igreja Católica, mas não são aceitos como escrituras sagradas pelas igrejas protestantes.</p>
+<p><strong>Quais são os livros adicionais presentes na Bíblia Católica?</strong></p>
+<p>Os sete livros adicionais presentes na Bíblia Católica são: Tobias, Judite, Sabedoria, Eclesiástico, Baruc, 1 Macabeus e 2 Macabeus. Além disso, trechos adicionais são encontrados nos livros de Ester e Daniel.</p>
+<p><strong>O que são os livros Pseudepígrafos da Bíblia Ortodoxa?</strong></p>
+<p>Os livros Pseudepígrafos são uma coleção de textos judaicos escritos durante o período do Segundo Templo. Eles não são considerados escrituras sagradas pelas igrejas ocidentais, mas são aceitos como parte da Bíblia Ortodoxa. Alguns exemplos de livros Pseudepígrafos são: Enoque, Jubileus, Testamentos dos Doze Patriarcas e Assunção de Moisés.</p>
+<p><strong>A Bíblia Judaica é aceita pelas religiões cristãs?</strong></p>
+<p>Embora os cristãos reconheçam o Antigo Testamento da Bíblia Judaica como parte de suas escrituras, eles também incluem o Novo Testamento como uma parte essencial de sua fé. Portanto, a Bíblia Judaica não é considerada completa pelas religiões cristãs.</p>
+<p><strong>Qual é a importância da Bíblia nas religiões mencionadas?</strong></p>
+<p>A Bíblia tem um papel central e fundamental nas religiões mencionadas. Ela é considerada a palavra de Deus e contém os ensinamentos e as histórias fundamentais para a fé de milhões de pessoas ao redor do mundo.</p>
+<div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800">
+<div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+<div class="flex flex-grow flex-col gap-3">
+<div class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+<div class="empty:hidden"><strong>Porque é importante saber quantos livros tem a Bíblia?</strong></div>
+<div></div>
+<div class="empty:hidden">É importante saber quantos livros tem a Bíblia por várias razões. A Bíblia é um texto religioso sagrado para milhões de pessoas em todo o mundo, e compreender a sua estrutura é fundamental para um estudo aprofundado e uma interpretação correta de seus ensinamentos.</div>
+</div>
+</div>
+<div class="flex justify-between lg:block">
+<div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800">
+<div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+<div class="flex flex-grow flex-col gap-3">
+<div class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+<div class="empty:hidden">
+<div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654] sm:AIPRM__conversation__response">
+<div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+<div class="flex flex-grow flex-col gap-3">
+<div class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+<div class="markdown prose w-full break-words dark:prose-invert light AIPRM__conversation__response">
+<p>A Bíblia é dividida em duas partes principais: o Antigo Testamento e o Novo Testamento. O Antigo Testamento contém livros que foram escritos antes do nascimento de Jesus Cristo, enquanto o Novo Testamento inclui livros escritos após seu nascimento.</p>
+<p>No total, a Bíblia contém 66 livros. O Antigo Testamento possui 39 livros, que incluem os livros históricos, poéticos, proféticos e os cinco livros da Lei (Gênesis, Êxodo, Levítico, Números e Deuteronômio). O Novo Testamento possui 27 livros, que incluem os Evangelhos, os Atos dos Apóstolos, as Epístolas (cartas) e o Livro do Apocalipse.</p>
+<p>Saber quantos livros a Bíblia contém ajuda a localizar e referenciar passagens específicas durante o estudo ou discussão religiosa. Além disso, conhecer a estrutura e o conteúdo dos livros permite uma melhor compreensão do contexto histórico, cultural e teológico das escrituras, o que auxilia na interpretação correta dos ensinamentos e mensagens contidos na Bíblia</p>
+<div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800">
+<div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+<div class="flex flex-grow flex-col gap-3">
+<div class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+<div class="empty:hidden"><strong>A Brit Hadashá é aceita pelos judeus ortodoxos?</strong></div>
+</div>
+</div>
+<div class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"></div>
+<div class="flex justify-between lg:block">
+<p>Não, a Brit Hadasha não é aceita pelos judeus ortodoxos como parte das suas Escrituras Sagradas. A tradição judaica ortodoxa se baseia principalmente na Tanakh, que consiste no Torah (os cinco primeiros livros da Bíblia Hebraica), os Nevi&#8217;im (Profetas) e os Ketuvim (Escritos). Esses livros são considerados divinamente inspirados e são reverenciados como a palavra de Deus para o povo judeu.</p>
+<p>A Brit Hadasha, que é conhecido como o Novo Testamento, contém textos que são considerados sagrados pelos messiânicos e cristãos, mas não pelos judeus ortodoxos. Para os judeus ortodoxos, a crença em Jesus como o Messias e a aceitação dos ensinamentos e escritos do Novo Testamento vão contra as crenças e interpretações tradicionais do judaísmo.</p>
+<p>No entanto, é importante ressaltar que existem diferentes correntes dentro do judaísmo, e algumas delas podem ter diferentes perspectivas em relação à Brit Hadasha. Por exemplo, existem judeus messiânicos que seguem os ensinamentos de Jesus como o Messias e veem a Brit Hadasha como uma parte relevante de sua fé. No entanto, eles são considerados uma minoria dentro da comunidade judaica em geral.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654] sm:AIPRM__conversation__response">
+<div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
+<div class="flex-shrink-0 flex flex-col relative items-end">
+<div class="w-[30px]">
+<div class="relative p-1 rounded-sm h-[30px] w-[30px] text-white flex items-center justify-center">
+<div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800">
+<div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+<div class="flex flex-grow flex-col gap-3">
+<div class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+<div class="empty:hidden"><strong>A Brit Hadasha é aceita pelos judeus messiânicos?</strong></div>
+</div>
+</div>
+<div class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"></div>
+<div class="flex justify-between lg:block">
+<div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654] sm:AIPRM__conversation__response">
+<div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl md:py-6 lg:px-0 m-auto">
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+<div class="flex flex-grow flex-col gap-3">
+<div class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+<div class="markdown prose w-full break-words dark:prose-invert light AIPRM__conversation__response">
+<p>Sim, a Brit Hadasha é aceita pelos judeus messiânicos como parte das suas Escrituras Sagradas. Os judeus messiânicos são um grupo religioso que segue o judaísmo reconhecendo Jesus como o Messias prometido nas Escrituras judaicas. Eles veem a Brit Hadasha, ou seja, o Novo Testamento, como uma parte importante da sua fé e o consideram uma continuação dos ensinamentos contidos na Tanakh (Antigo Testamento).</p>
+<p>Os judeus messiânicos acreditam que Jesus cumpriu as profecias messiânicas do Antigo Testamento e veem seus ensinamentos e a Nova Aliança apresentada na Brit Hadasha como uma revelação divina válida para o povo judeu. Eles valorizam tanto as Escrituras do Antigo Testamento quanto as do Novo Testamento, considerando-as uma fonte de orientação espiritual e prática.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><a href="https://www.instagram.com/patriciaalvesensina/" target="_blank" rel="noopener"><img decoding="async" class="alignnone size-full wp-image-4834" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20200'%3E%3C/svg%3E" alt="foco e produtividade" width="600" height="200" data-lazy-srcset="https://patriciaalves.com.br/wp-content/uploads/2023/07/Banner-blog-patricia-.png 600w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Banner-blog-patricia--300x100.png 300w" data-lazy-sizes="(max-width: 600px) 100vw, 600px" data-lazy-src="https://patriciaalves.com.br/wp-content/uploads/2023/07/Banner-blog-patricia-.png" /><noscript><img loading="lazy" decoding="async" class="alignnone size-full wp-image-4834" src="https://patriciaalves.com.br/wp-content/uploads/2023/07/Banner-blog-patricia-.png" alt="foco e produtividade" width="600" height="200" srcset="https://patriciaalves.com.br/wp-content/uploads/2023/07/Banner-blog-patricia-.png 600w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Banner-blog-patricia--300x100.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></noscript></a></p>
+<p><strong>Conclusão</strong></p>
+<p>Neste artigo, exploramos quantos livros tem a Bíblia Evangélica, Católica, Ortodoxa e Judaica. Descobrimos que a Bíblia Evangélica possui 66 livros, a Bíblia Católica possui 73 livros, a Bíblia Ortodoxa possui 78 livros e a Bíblia Judaica possui 24 livros. Cada versão tem suas características específicas e desempenha um papel importante nas respectivas tradições religiosas. Independentemente da versão, a Bíblia continua sendo uma fonte de inspiração e orientação para milhões de pessoas em todo o mundo.</p>
+<p class="p1"><b><i>Leia também</i></b></p>
+<p class="p2"><span class="s1"><a href="https://patriciaalves.com.br/habitos-toxicos-que-destroem-os-relacionamentos/">Hábitos tóxicos que destroem os relacionamentos</a><br/>
+</span><span class="s1"><a href="https://patriciaalves.com.br/7-licoes-das-mulheres-da-biblia-que-toda-crista-deveria-seguir/">7 LIÇÕES DAS MULHERES DA BÍBLIA QUE TODA CRISTÃ DEVERIA SEGUIR</a></span><span class="s1"><br/>
+<a href="https://patriciaalves.com.br/abreviacoes-dos-livros-da-biblia-o-guia-completo/">Abreviações dos livros da Bíblia</a><br/>
+<a href="https://patriciaalves.com.br/historia-do-rei-%E2%80%A6i-davi-na-biblia/">A história do Rei Davi</a><br/>
+<a href="https://patriciaalves.com.br/casamento-inabalavel/">Tenha um CASAMENTO INABALÁVEL</a><br/>
+<a href="https://patriciaalves.com.br/quantos-livros-t…todoxa-e-judaica/">Quantos livros tem a Bíblia ?</a></span></p>
+</div> </article>
+<div class="nv-sidebar-wrap col-sm-12 nv-right blog-sidebar ">
+<aside id="secondary" role="complementary">
+<style type="text/css"></style><div id="search-8" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://patriciaalves.com.br/">
+<label>
+<span class="screen-reader-text">Pesquisar por...</span>
+</label>
+<input type="search" class="search-field" aria-label="Busca" placeholder="Pesquisar por..." value name="s" />
+<button type="submit" class="search-submit nv-submit" aria-label="Busca">
+<span class="nv-search-icon-wrap">
+<span class="nv-icon nv-search">
+<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" /></svg>
+</span> </span>
+</button>
+</form>
+</div><div id="media_image-6" class="widget widget_media_image"><a href="https://patriciaalves.com.br/casamento-inabalavel"><img width="300" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" class="image wp-image-3707  attachment-medium size-medium" alt style="max-width: 100%; height: auto;" decoding="async" data-lazy-srcset="https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-300x300.png 300w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-1024x1024.png 1024w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-150x150.png 150w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-768x768.png 768w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-800x800.png 800w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-700x700.png 700w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-100x100.png 100w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1.png 1080w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-300x300.png" /><noscript><img width="300" height="300" src="https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-300x300.png" class="image wp-image-3707  attachment-medium size-medium" alt="" style="max-width: 100%; height: auto;" decoding="async" srcset="https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-300x300.png 300w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-1024x1024.png 1024w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-150x150.png 150w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-768x768.png 768w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-800x800.png 800w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-700x700.png 700w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1-100x100.png 100w, https://patriciaalves.com.br/wp-content/uploads/2023/07/Vem-comigo-Post-para-Instagram-Quadrado-1.png 1080w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a></div><div id="categories-6" class="widget widget_categories"><p class="widget-title">Categorias</p>
+<ul>
+<li class="cat-item cat-item-4"><a href="https://patriciaalves.com.br/category/curiosidades/">Curiosidades</a>
+</li>
+<li class="cat-item cat-item-33"><a href="https://patriciaalves.com.br/category/desenvolvimento-pessoal/">Desenvolvimento pessoal</a>
+</li>
+<li class="cat-item cat-item-123"><a href="https://patriciaalves.com.br/category/estudos-por-capitulos/deuteronomio/">Deuteronômio</a>
+</li>
+<li class="cat-item cat-item-106"><a href="https://patriciaalves.com.br/category/estudo-biblico/">Estudo bíblico</a>
+</li>
+<li class="cat-item cat-item-122"><a href="https://patriciaalves.com.br/category/estudos-por-capitulos/">Estudos por capítulos</a>
+</li>
+<li class="cat-item cat-item-119"><a href="https://patriciaalves.com.br/category/estudos-por-capitulos/exodo/">Êxodo</a>
+</li>
+<li class="cat-item cat-item-118"><a href="https://patriciaalves.com.br/category/estudos-por-capitulos/genesis/">Gênesis</a>
+</li>
+<li class="cat-item cat-item-120"><a href="https://patriciaalves.com.br/category/estudos-por-capitulos/levitico/">Levítico</a>
+</li>
+<li class="cat-item cat-item-121"><a href="https://patriciaalves.com.br/category/estudos-por-capitulos/numeros/">Números</a>
+</li>
+<li class="cat-item cat-item-1"><a href="https://patriciaalves.com.br/category/relacionamentos/">Relacionamentos</a>
+</li>
+<li class="cat-item cat-item-117"><a href="https://patriciaalves.com.br/category/saude-mental/">Saúde mental</a>
+</li>
+</ul>
+</div><div id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2864495022954910" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2864495022954910" data-ad-slot="9709235681" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+<div id="recent-posts-9" class="widget widget_recent_entries">
+<p class="widget-title">Posts recentes</p>
+<ul>
+<li>
+<a href="https://patriciaalves.com.br/a-historia-de-moises-quem-foi-moises-na-biblia/">A História de Moisés: Quem Foi Moisés na Bíblia?</a>
+</li>
+<li>
+<a href="https://patriciaalves.com.br/quem-foi-jezabel-na-biblia/">Quem Foi Jezabel na Bíblia?</a>
+</li>
+<li>
+<a href="https://patriciaalves.com.br/deuteronomio-2-estudo-e-interpretacao/">Deuteronômio 2 &#8211; Estudo e Interpretação</a>
+</li>
+<li>
+<a href="https://patriciaalves.com.br/deuteronomio-1-estudo-e-interpretacao/">Deuteronômio 1 &#8211; Estudo e Interpretação</a>
+</li>
+<li>
+<a href="https://patriciaalves.com.br/jesus-era-palestino-uma-investigacao-profunda-na-historia/">Jesus era Palestino? Uma Investigação Profunda na História</a>
+</li>
+</ul>
+</div><div id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"></div></div><div id="tag_cloud-3" class="widget widget_tag_cloud"><p class="widget-title">Tags</p><div class="tagcloud"><a href="https://patriciaalves.com.br/tag/biblia/" class="tag-cloud-link tag-link-107 tag-link-position-1" style="font-size: 22pt;" aria-label="biblia (70 itens)">biblia</a>
+<a href="https://patriciaalves.com.br/tag/contraceptivos/" class="tag-cloud-link tag-link-116 tag-link-position-2" style="font-size: 8pt;" aria-label="contraceptivos (1 item)">contraceptivos</a>
+<a href="https://patriciaalves.com.br/tag/dus/" class="tag-cloud-link tag-link-112 tag-link-position-3" style="font-size: 20.916129032258pt;" aria-label="D&#039;us (53 itens)">D&#039;us</a>
+<a href="https://patriciaalves.com.br/tag/desenvolviento-pessoal/" class="tag-cloud-link tag-link-34 tag-link-position-4" style="font-size: 9.6258064516129pt;" aria-label="desenvolviento pessoal (2 itens)">desenvolviento pessoal</a>
+<a href="https://patriciaalves.com.br/tag/desenvolvimento-pessoal/" class="tag-cloud-link tag-link-102 tag-link-position-5" style="font-size: 8pt;" aria-label="Desenvolvimento pessoal (1 item)">Desenvolvimento pessoal</a>
+<a href="https://patriciaalves.com.br/tag/egito/" class="tag-cloud-link tag-link-110 tag-link-position-6" style="font-size: 8pt;" aria-label="egito (1 item)">egito</a>
+<a href="https://patriciaalves.com.br/tag/genesis/" class="tag-cloud-link tag-link-111 tag-link-position-7" style="font-size: 20.283870967742pt;" aria-label="GÊNESIS (45 itens)">GÊNESIS</a>
+<a href="https://patriciaalves.com.br/tag/inteligencia-emocional/" class="tag-cloud-link tag-link-100 tag-link-position-8" style="font-size: 9.6258064516129pt;" aria-label="Inteligência Emocional (2 itens)">Inteligência Emocional</a>
+<a href="https://patriciaalves.com.br/tag/israel/" class="tag-cloud-link tag-link-15 tag-link-position-9" style="font-size: 8pt;" aria-label="israel (1 item)">israel</a>
+<a href="https://patriciaalves.com.br/tag/levitico/" class="tag-cloud-link tag-link-113 tag-link-position-10" style="font-size: 12.335483870968pt;" aria-label="Levítico (5 itens)">Levítico</a>
+<a href="https://patriciaalves.com.br/tag/lideranca/" class="tag-cloud-link tag-link-101 tag-link-position-11" style="font-size: 8pt;" aria-label="Liderança (1 item)">Liderança</a>
+<a href="https://patriciaalves.com.br/tag/moises/" class="tag-cloud-link tag-link-109 tag-link-position-12" style="font-size: 18.025806451613pt;" aria-label="moisés (25 itens)">moisés</a>
+<a href="https://patriciaalves.com.br/tag/metodo-contraceptivo/" class="tag-cloud-link tag-link-114 tag-link-position-13" style="font-size: 8pt;" aria-label="método contraceptivo (1 item)">método contraceptivo</a>
+<a href="https://patriciaalves.com.br/tag/metodos-contraceptivos/" class="tag-cloud-link tag-link-115 tag-link-position-14" style="font-size: 8pt;" aria-label="métodos contraceptivos (1 item)">métodos contraceptivos</a>
+<a href="https://patriciaalves.com.br/tag/negocios/" class="tag-cloud-link tag-link-37 tag-link-position-15" style="font-size: 8pt;" aria-label="negócios (1 item)">negócios</a>
+<a href="https://patriciaalves.com.br/tag/palestina/" class="tag-cloud-link tag-link-17 tag-link-position-16" style="font-size: 8pt;" aria-label="palestina (1 item)">palestina</a>
+<a href="https://patriciaalves.com.br/tag/perigo/" class="tag-cloud-link tag-link-26 tag-link-position-17" style="font-size: 8pt;" aria-label="perigo (1 item)">perigo</a>
+<a href="https://patriciaalves.com.br/tag/pomodoro/" class="tag-cloud-link tag-link-38 tag-link-position-18" style="font-size: 8pt;" aria-label="pomodoro (1 item)">pomodoro</a>
+<a href="https://patriciaalves.com.br/tag/portugal/" class="tag-cloud-link tag-link-11 tag-link-position-19" style="font-size: 8pt;" aria-label="portugal (1 item)">portugal</a>
+<a href="https://patriciaalves.com.br/tag/produtividade/" class="tag-cloud-link tag-link-36 tag-link-position-20" style="font-size: 8pt;" aria-label="produtividade (1 item)">produtividade</a>
+<a href="https://patriciaalves.com.br/tag/trabalho/" class="tag-cloud-link tag-link-35 tag-link-position-21" style="font-size: 8pt;" aria-label="trabalho (1 item)">trabalho</a>
+<a href="https://patriciaalves.com.br/tag/viajar/" class="tag-cloud-link tag-link-16 tag-link-position-22" style="font-size: 8pt;" aria-label="viajar (1 item)">viajar</a>
+<a href="https://patriciaalves.com.br/tag/exodo/" class="tag-cloud-link tag-link-108 tag-link-position-23" style="font-size: 18.206451612903pt;" aria-label="êxodo (26 itens)">êxodo</a></div>
+</div><div id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2864495022954910" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2864495022954910" data-ad-slot="9709235681" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+</aside>
+</div>
+</div>
+</div>
+</main>
+<footer class="site-footer" id="site-footer">
+<div class="hfg_footer">
+<div class="footer--row footer-top hide-on-mobile hide-on-tablet layout-full-contained" id="cb-row--footer-top" data-row-id="top" data-show-on="desktop">
+<div class="footer--row-inner footer-top-inner footer-content-wrap">
+<div class="container">
+<div class="hfg-grid nv-footer-content hfg-grid-top row--wrapper row " data-section="hfg_footer_layout_top">
+<div class="hfg-slot left"></div><div class="hfg-slot c-left"><div class="builder-item desktop-left tablet-left mobile-left"><div class="item--inner builder-item--footer-menu has_menu" data-section="footer_menu_primary" data-item-id="footer-menu">
+<div class="component-wrap">
+<div role="navigation" class="nav-menu-footer" aria-label="Menu de rodapé">
+<ul id="footer-menu" class="footer-menu nav-ul"><li id="menu-item-1438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1438"><div class="wrap"><a rel="privacy-policy" href="https://patriciaalves.com.br/politica-de-privacidade/">Política de privacidade</a></div></li>
+<li id="menu-item-1699" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1699"><div class="wrap"><a href="https://patriciaalves.com.br/termos-de-uso/">Termos de Uso</a></div></li>
+<li id="menu-item-1439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1439"><div class="wrap"><a href="https://patriciaalves.com.br/quem-e-patricia-alves/">Quem é Patricia Alves</a></div></li>
+</ul> </div>
+</div>
+</div>
+</div></div><div class="hfg-slot center"></div> </div>
+</div>
+</div>
+</div>
+<div class="footer--row footer-bottom hide-on-mobile hide-on-tablet layout-full-contained" id="cb-row--footer-bottom" data-row-id="bottom" data-show-on="desktop">
+<div class="footer--row-inner footer-bottom-inner footer-content-wrap">
+<div class="container">
+<div class="hfg-grid nv-footer-content hfg-grid-bottom row--wrapper row " data-section="hfg_footer_layout_bottom">
+<div class="hfg-slot left"><div class="builder-item"><div class="item--inner"><div class="component-wrap"><div><p><a href="https://themeisle.com/themes/neve/" rel="nofollow">Neve</a> | Movido a <a href="http://wordpress.org" rel="nofollow">WordPress</a></p></div></div></div></div></div><div class="hfg-slot c-left"></div><div class="hfg-slot center"></div> </div>
+</div>
+</div>
+</div>
+<div class="footer--row footer-top hide-on-desktop layout-full-contained" id="cb-row--footer-top" data-row-id="top" data-show-on="mobile">
+<div class="footer--row-inner footer-top-inner footer-content-wrap">
+<div class="container">
+<div class="hfg-grid nv-footer-content hfg-grid-top row--wrapper row " data-section="hfg_footer_layout_top">
+<div class="hfg-slot left"></div><div class="hfg-slot c-left"><div class="builder-item desktop-left tablet-left mobile-left"><div class="item--inner builder-item--footer-menu has_menu" data-section="footer_menu_primary" data-item-id="footer-menu">
+<div class="component-wrap">
+<div role="navigation" class="nav-menu-footer" aria-label="Menu de rodapé">
+<ul id="footer-menu" class="footer-menu nav-ul"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1438"><div class="wrap"><a rel="privacy-policy" href="https://patriciaalves.com.br/politica-de-privacidade/">Política de privacidade</a></div></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1699"><div class="wrap"><a href="https://patriciaalves.com.br/termos-de-uso/">Termos de Uso</a></div></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1439"><div class="wrap"><a href="https://patriciaalves.com.br/quem-e-patricia-alves/">Quem é Patricia Alves</a></div></li>
+</ul> </div>
+</div>
+</div>
+</div></div><div class="hfg-slot center"></div> </div>
+</div>
+</div>
+</div>
+<div class="footer--row footer-bottom hide-on-desktop layout-full-contained" id="cb-row--footer-bottom" data-row-id="bottom" data-show-on="mobile">
+<div class="footer--row-inner footer-bottom-inner footer-content-wrap">
+<div class="container">
+<div class="hfg-grid nv-footer-content hfg-grid-bottom row--wrapper row " data-section="hfg_footer_layout_bottom">
+<div class="hfg-slot left"><div class="builder-item"><div class="item--inner"><div class="component-wrap"><div><p><a href="https://themeisle.com/themes/neve/" rel="nofollow">Neve</a> | Movido a <a href="http://wordpress.org" rel="nofollow">WordPress</a></p></div></div></div></div></div><div class="hfg-slot c-left"></div><div class="hfg-slot center"></div> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/patriciaalves.com.br","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script id="neve-script-js-extra">
+var NeveProperties = {"ajaxurl":"https:\/\/patriciaalves.com.br\/wp-admin\/admin-ajax.php","nonce":"0b7cf2302a","isRTL":"","isCustomize":""};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" async="async" data-rocket-src="https://patriciaalves.com.br/wp-content/cache/min/1/wp-content/themes/neve/assets/js/build/modern/frontend.js?ver=1710068192" id="neve-script-js" async></script>
+<script type="rocketlazyloadscript" id="neve-script-js-after">
+	var html = document.documentElement;
+	var theme = html.getAttribute('data-neve-theme') || 'light';
+	var variants = {"logo":{"light":{"src":"https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado.png","srcset":"https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado.png 2044w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-300x155.png 300w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-1024x529.png 1024w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-768x396.png 768w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-1536x793.png 1536w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-700x361.png 700w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-104x54.png 104w","sizes":"(max-width: 2044px) 100vw, 2044px"},"dark":{"src":"https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado.png","srcset":"https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado.png 2044w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-300x155.png 300w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-1024x529.png 1024w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-768x396.png 768w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-1536x793.png 1536w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-700x361.png 700w, https:\/\/patriciaalves.com.br\/wp-content\/uploads\/2023\/04\/cropped-pa-dourado-104x54.png 104w","sizes":"(max-width: 2044px) 100vw, 2044px"},"same":true}};
+
+	function setCurrentTheme( theme ) {
+		var pictures = document.getElementsByClassName( 'neve-site-logo' );
+		for(var i = 0; i<pictures.length; i++) {
+			var picture = pictures.item(i);
+			if( ! picture ) {
+				continue;
+			};
+			var fileExt = picture.src.slice((Math.max(0, picture.src.lastIndexOf(".")) || Infinity) + 1);
+			if ( fileExt === 'svg' ) {
+				picture.removeAttribute('width');
+				picture.removeAttribute('height');
+				picture.style = 'width: var(--maxwidth)';
+			}
+			var compId = picture.getAttribute('data-variant');
+			if ( compId && variants[compId] ) {
+				var isConditional = variants[compId]['same'];
+				if ( theme === 'light' || isConditional || variants[compId]['dark']['src'] === false ) {
+					picture.src = variants[compId]['light']['src'];
+					picture.srcset = variants[compId]['light']['srcset'] || '';
+					picture.sizes = variants[compId]['light']['sizes'];
+					continue;
+				};
+				picture.src = variants[compId]['dark']['src'];
+				picture.srcset = variants[compId]['dark']['srcset'] || '';
+				picture.sizes = variants[compId]['dark']['sizes'];
+			};
+		};
+	};
+
+	var observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {
+			if (mutation.type == 'attributes') {
+				theme = html.getAttribute('data-neve-theme');
+				setCurrentTheme(theme);
+			};
+		});
+	});
+
+	observer.observe(html, {
+		attributes: true
+	});
+function toggleAriaClick() { function toggleAriaExpanded(toggle = 'true') { document.querySelectorAll('button.navbar-toggle').forEach(function(el) { if ( el.classList.contains('caret-wrap') ) { return; } el.setAttribute('aria-expanded', 'true' === el.getAttribute('aria-expanded') ? 'false' : toggle); }); } toggleAriaExpanded(); if ( document.body.hasAttribute('data-ftrap-listener') ) { return; } document.body.setAttribute('data-ftrap-listener', 'true'); document.addEventListener('ftrap-end', function() { toggleAriaExpanded('false'); }); }
+var menuCarets=document.querySelectorAll(".nav-ul li > .wrap > .caret");menuCarets.forEach(function(e){e.addEventListener("keydown",e=>{13===e.keyCode&&(e.target.parentElement.classList.toggle("active"),e.target.getAttribute("aria-pressed")&&e.target.setAttribute("aria-pressed","true"===e.target.getAttribute("aria-pressed")?"false":"true"))}),e.parentElement.parentElement.addEventListener("focusout",t=>{!e.parentElement.parentElement.contains(t.relatedTarget)&&(e.parentElement.classList.remove("active"),e.setAttribute("aria-pressed","false"))})});
+</script>
+<script async="async" src="https://stats.wp.com/e-202413.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script id="jetpack-stats-js-after">
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"165986117\",\"post\":\"3595\",\"tz\":\"0\",\"srv\":\"patriciaalves.com.br\",\"j\":\"1:13.2.1\"}") ]);
+_stq.push([ "clickTrackerInit", "165986117", "3595" ]);
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://patriciaalves.com.br/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
