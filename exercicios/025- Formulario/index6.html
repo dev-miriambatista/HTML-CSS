@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exemplo de formulário</h1>
+    <fieldset>
+        <legend>Cor de preferência</legend>
+    <form action="cadastro.php" method="post" autocomplete="on"></form>
+    <p>
+        <label for="icor">Cor</label>
+        <input type="color" name="color" id="icolor" value="#990000">
+    </p>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Nível de Satisfação</legend>
+        <label for="iniv">De 1 a 5 (1 para pessimo e 5 para excelente)</label>
+        <input type="range" name="niv" id="iniv" min="1" max="5" value="1">
+    </fieldset>
+
+    <fieldset>
+        <legend>Foto de perfil</legend>
+        <label for="ifoto">Insira sua fato aqui -></label>
+        <input type="file" name="foto" id="ifoto">
+    </fieldset>
+
+    <p>
+        <input type="submit" value="ENVIAR">
+        <input type="reset" value="LIMPAR">
+    </p>
+</body>
+</html>
