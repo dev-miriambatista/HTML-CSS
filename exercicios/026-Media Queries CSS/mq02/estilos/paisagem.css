@@ -1,2 +1,6 @@
-@charset "utf-08";
-/*aparelho deitado*/
+@charset "utf-8";
+/*aparelho deitado lanscape*/
+
+body{
+ background-image: url(/imagens/cev-landscape.jpg);
+}
