@@ -8,10 +8,11 @@
 
 body,htnl{
 background-color: lightslategray;
+
 }
 
 header{
-    background-color: rgb(192, 167, 167);
+    background-color: #c0a7a7;
 }
 
 header>h1{
@@ -19,16 +20,17 @@ header>h1{
     text-align: center;
 }
 #burguer{
-    background-color: white;
+    background-color: #000000;
+    color: #c0a7a7;
     display: block;
     text-align: center;
     padding:10px;
 }
 #burguer:hover{
-    background-color: rgb(0, 0, 0);
+    background-color: #000000;
     transition: .5s;
     cursor: pointer;
-    color:rgb(255, 255, 255);
+    color:#ffffff;
 }
 
 nav{
@@ -53,7 +55,7 @@ nav>ul>li>a:hover{
     transition: .5s;
 }
 main{
-    width: 90vw;
+    width: 70vw;
     background-color: white;
     margin: auto;
     margin-top: 10px;
