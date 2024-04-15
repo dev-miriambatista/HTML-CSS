@@ -16,8 +16,6 @@ Extra large screens, TV – 1201px, and more.*/
         display: block;
 
     }
-}
-
     nav>ul>li{
         display: inline-block;
         width: auto;
@@ -26,3 +24,4 @@ Extra large screens, TV – 1201px, and more.*/
     nav>ul>li>a{
         border-radius: 15px 15px 0px 0px;
     }
+}
