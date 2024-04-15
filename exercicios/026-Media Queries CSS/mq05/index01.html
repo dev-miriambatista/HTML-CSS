@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+        <link rel="stylesheet" href="estilos.style.css">
+</head>
+<body>
+    <header>
+<h1>Meu site</h1>
+<i id="burguer" class="material-icons"onclick="clickMenu()">menu</i>
+<nav id="itens">
+    <ul>
+        <li><a href="#">Sobre</a></li>
+        <li> <a href="#">Loja</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="#">Trabalhe Conosco</a></li>
+    </ul>
+</nav>
+    </header>
+    <main>
+        <article>
+           <h2> Introdução</h2>
+            <p>
+                Você já aprendeu muita coisa sobre o nosso sistema solar, certo?
+                Vamos agora sistematizar algumas informações importantes sobre os planetas.
+                Nosso sistema solar é formado pelo Sol, os planetas com suas luas e anéis, cinturões de asteroides, cometas e poeira cósmica. Todos formados na mesma época, algo em torno de 4,5 bilhões de anos atrás, a partir da condensação de uma enorme nuvem de gás e poeira.
+                Os potentes telescópios que detectam diferentes frequências do espectro eletromagnético e as viagens espaciais trouxeram muitas informações sobre o nosso sistema solar. Sabemos hoje que nosso sistema solar possui oito planetas e cinco planetas anões.
+            </p>
+            
+            <p>
+                Figura 1: Nosso sistema solar. Crédito: imagem modificada de Farry, domínio público. Disponível em: https://commons.wikimedia.org/wiki/File:Solar_System_size_to_scale.svg. Acesso em: 19/10/2018.
+                O Sol concentra 99,80% de toda a massa do nosso sistema solar, e é mais brilhante do que 80% das estrelas que compõem a nossa galáxia, a Via Láctea.
+            </p>
+           
+            <p>Além desses planetas foram descobertos pequenos astros denominados objetos transnetunianos. O primeiro a ser encontrado foi Plutão, em 1930, mas no século XXI outros foram descobertos, como Eris, que tem quase o mesmo tamanho de Plutão. Até o momento, mais de 1.750 objetos transnetunianos foram descobertos.</p>
+            <p>Todos os planetas e planetas anões giram em torno de si mesmos (o movimento responsável pelo dia e pela noite na Terra), e quase todos giram em torno de si na mesma direção que giram em torno do Sol. A exceção é Vênus, que gira bem devagar na direção contrária, e Urano e Plutão, que giram em torno de eixos mais laterais.</p>
+            <p>Os quatro planetas mais próximos do Sol (Mercúrio, Vênus, Terra e Marte) são chamados de planetas internos ou terrestres. Eles são relativamente pequenos (vide Figura 1) e possuem rochas e metais como os principais elementos de sua composição. Além disso, possuem superfícies sólidas compostas por crateras, montanhas e vulcões.</p>
+            <p>
+                Por outro lado, Júpiter, Saturno, Urano e Netuno são bem maiores e compostos principalmente por gelo, líquidos e gases. Eles são chamados de planetas gigantes – bem compreensível, não? Olhe novamente a Figura 1. Para você ter uma ideia podemos colocar mais de 1.400 luas da Terra dentro de Júpiter. Esses planetas não possuem superfícies sólidas, ao contrário, possuem enormes oceanos esféricos.
+                Na Tabela 1, apresentamos as características dos planetas, a saber, diâmetro, densidade, massa e os satélites naturais ou luas.
+            </p>
+        </article>
+    </main>
+    <script>
+        function clickMenu(){
+            if(itens.style.display=='block'){
+            itens.style.display='none'
+        }else{
+             (itens.style.display='block')
+        }
+    }
+    </script>
+</body>
+</html>
